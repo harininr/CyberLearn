@@ -1,0 +1,206 @@
+Build a FULL-STACK, DOWNLOADABLE web application titled:
+
+"CyberEase Simulator – Interactive Security Learning Platform"
+
+ABSOLUTE REQUIREMENTS (NON-NEGOTIABLE)
+1. This project is for an academic cybersecurity laboratory evaluation.
+2. ALL cybersecurity mechanisms MUST be implemented in BACKEND CODE.
+3. This is NOT a static demo, mock UI, or conceptual simulation.
+4. The project MUST run locally after:
+   - Downloading ZIP
+   - npm install
+   - npm run dev
+5. No paid APIs for security logic.
+6. Code MUST be simple, readable, well-commented, and viva-explainable.
+7. Every module must TEACH the concept step-by-step while executing real logic.
+
+TECH STACK (STRICT – FOLLOW EXACTLY)
+Backend:
+- Node.js
+- Express.js
+- Node.js built-in crypto module ONLY
+
+Frontend:
+- HTML
+- CSS
+- React
+
+Database / Storage:
+- LOCAL ONLY
+- Use ONE:
+  - SQLite (preferred), OR
+  - JSON-based storage using fs module
+- Storage MUST auto-initialize on first run
+- NO PostgreSQL, NO MongoDB, NO Prisma, NO Drizzle
+
+
+THEME & UI REQUIREMENTS (MANDATORY)
+Implement BOTH Light Mode and Dark Mode.
+
+LIGHT MODE:
+- Background: White
+- Primary color: Light Teal (#4FD1C5)
+- Accent: Soft teal borders
+- Text: Dark gray / black
+
+DARK MODE:
+- Background: Very dark teal / near-black (#0F172A)
+- Primary color: Teal (#14B8A6)
+- Text: White / light gray
+
+UI RULES:
+- Theme toggle button required
+- Theme preference persisted using localStorage
+- Clean, academic, minimal UI
+- Each module must contain:
+  1. Input Panel
+  2. Output Panel
+  3. Step-by-Step Explanation Panel (dynamic)
+
+==================================================================
+CORE MODULES (ALL MUST BE IMPLEMENTED)
+==================================================================
+
+------------------------------------------------
+1. AUTHENTICATION MODULE (MANDATORY)
+------------------------------------------------
+- User Registration & Login
+- Password storage using:
+  - Salt + PBKDF2 hashing (crypto.pbkdf2)
+- Storage fields MUST include:
+  - username
+  - passwordHash
+  - salt
+  - role (Student / Instructor / Admin)
+  - isMfaEnabled (boolean)
+
+- Single-Factor Authentication
+- Multi-Factor Authentication using OTP:
+  - Time-based OR simulated OTP (console allowed)
+
+- Implement session-based authentication
+- Follow NIST SP 800-63-2 architecture:
+  - Claimant
+  - Verifier
+  - Credential lifecycle
+
+- VISUALIZE clearly:
+  Plain Password → Salt → Hash → Stored Value
+
+------------------------------------------------
+2. AUTHORIZATION / ACCESS CONTROL MODULE
+------------------------------------------------
+- Roles:
+  - Student
+  - Instructor
+  - Admin
+
+- Implement Role-Based Access Control (RBAC)
+- Define an Access Control Matrix
+- Protect backend routes using middleware
+- Deny unauthorized access with clear error messages
+
+- Provide a dedicated page explaining:
+  - Access control rules
+  - Why each restriction exists
+
+------------------------------------------------
+3. ENCRYPTION & KEY EXCHANGE MODULE
+------------------------------------------------
+- Implement AES encryption & decryption
+- Implement RSA key generation
+- Implement Hybrid Encryption:
+  - RSA encrypts AES key
+  - AES encrypts message
+
+- Backend MUST perform real crypto operations
+
+- VISUALIZE step-by-step:
+  Message → Key → Encrypted → Decrypted
+
+------------------------------------------------
+4. HASHING & DIGITAL SIGNATURE MODULE
+------------------------------------------------
+- Implement SHA-256 hashing
+- Implement hashing with salt
+- Implement Digital Signature:
+  - Hash data
+  - Sign using private key
+  - Verify using public key
+
+- Demonstrate integrity failure if data is modified
+
+------------------------------------------------
+5. ENCODING MODULE
+------------------------------------------------
+- Implement Base64 encoding & decoding
+- Implement QR code generation
+- CLEARLY explain:
+  Encoding ≠ Encryption
+
+------------------------------------------------
+6. ATTACK SIMULATION MODULE (SAFE & EDUCATIONAL)
+------------------------------------------------
+- Simulate brute-force attack:
+  - Rate-limited
+  - Educational only
+- Simulate replay attack:
+  - Blocked using nonce or token expiry
+
+- VISUALIZE:
+  - Attack steps
+  - Countermeasure
+  - Security principle involved
+
+AI LEARNING ASSISTANT (MANDATORY)
+Integrate an AI tutor panel using OpenRouter API:
+
+- AI is used ONLY for:
+  - Explaining concepts
+  - Answering student doubts
+  - Clarifying steps shown in modules
+
+- AI MUST NOT:
+  - Perform security logic
+  - Generate passwords, hashes, or keys
+  - Replace backend enforcement
+
+- AI context must be personalized to:
+  "CyberSec Simulator – Interactive Security Learning Platform"
+
+- Place the AI assistant as:
+  - A collapsible sidebar or help panel
+  - Context-aware (knows current module)
+
+APPLICATION STRUCTURE (MANDATORY)
+/server
+  - index.js
+  - routes/
+  - middleware/
+  - storage/
+  - utils/crypto.js
+/client
+  - index.html
+  - css/
+  - js/
+  - assets/
+
+- Clear separation of concerns
+- Extensive comments explaining security logic
+- Logs for educational tracing
+
+DELIVERABLES (MANDATORY)
+- Fully runnable project
+- README.md explaining:
+  - Architecture
+  - Storage design
+  - Security decisions
+  - Threat model
+- Project MUST be downloadable as ZIP
+- Code MUST be easy to explain in viva
+
+FINAL INSTRUCTION (CRITICAL)
+Generate ALL required files, routes, utilities, schemas, and frontend pages.
+Ensure local storage initializes automatically.
+Avoid fragile designs or cloud dependencies.
+This MUST be a LEARNING APPLICATION that teaches cybersecurity concepts step-by-step while executing real implementations.
