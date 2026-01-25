@@ -50,7 +50,7 @@ export default function Dashboard() {
           <div className="space-y-4">
             <div className="flex justify-between text-sm mb-1">
               <span>Security Fundamentals</span>
-              <span className="font-mono">33%</span>
+              <span className="font-mono">0%</span>
             </div>
             <div className="h-2 w-full bg-background rounded-full overflow-hidden">
               <div className="h-full bg-primary w-1/3 rounded-full" />

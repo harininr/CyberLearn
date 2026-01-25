@@ -52,7 +52,7 @@ export default function AuthPage() {
             <div className="bg-teal-500/20 p-2 rounded-lg backdrop-blur-sm border border-teal-500/30">
               <Shield className="w-8 h-8 text-teal-400" />
             </div>
-            <span className="text-xl font-bold font-display tracking-tight">CyberEase</span>
+            <span className="text-xl font-bold font-display tracking-tight">CyberLearn</span>
           </div>
           
           <h1 className="text-5xl font-bold font-display leading-tight mb-6">

@@ -83,7 +83,7 @@ export function AITutor({ isOpen, onToggle }: AITutorProps) {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Bot className="w-8 h-8 text-primary" />
                   </div>
-                  <h4 className="font-semibold mb-2">Welcome to CyberEase Tutor</h4>
+                  <h4 className="font-semibold mb-2">Welcome to CyberLearn Tutor</h4>
                   <p className="text-sm text-muted-foreground mb-6">
                     Ask questions about cryptography, hashing, or cybersecurity concepts.
                   </p>

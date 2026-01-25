@@ -1,6 +1,421 @@
 {
-  "users": [],
-  "logs": [],
-  "conversations": [],
-  "messages": []
+  "users": [
+    {
+      "id": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "username": "harininagarajan",
+      "password": "b1003859998209bb9a9c871eb4123b66894c3dc1753512943750071d86bd6fa7f30a6f36f0ddd77241034b56e0e038ab1c24e5e553b7741b7af7db84c8349e0a",
+      "salt": "ffa4e7e395b6fb1a7d4aaba6fe012316",
+      "role": "Student",
+      "isMfaEnabled": false
+    },
+    {
+      "id": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
+      "username": "nagarajans",
+      "password": "f8b229d244525d1aec600d9ae3a75339e3c6a625d6bbaf6cc1de40ba94ea75fbc3abae3fa8ea9b75b37ef2284fd59874e4a7facc6753f1512c1058061d526110",
+      "salt": "44ded49d5a3d69ac7c1dc11c4517af38",
+      "role": "Student",
+      "isMfaEnabled": false
+    },
+    {
+      "id": "d097d514-6ee2-4b89-9fdd-f5fc331fc688",
+      "username": "admin123",
+      "password": "2a6893a552e4f14e411c7cb2b2f86d4c5676eb092cd27aa96e304b85dfebb07f44f2a4a68233730d3d3acc43aafa89d57faa674ee8c3aeeebb682ea14ecc34c8",
+      "salt": "13e72919eb62b85de042241fe90a7e4c",
+      "role": "Instructor",
+      "isMfaEnabled": false
+    },
+    {
+      "id": "528f68b6-388c-41c8-a49c-01fcd330a4da",
+      "username": "XYZ",
+      "password": "22a045cdcc33fab1b33e42dfed6f8f553d64986afd4c7b73284f2f6055c3a17b91740bad70e7e5cf11b4e4c85a6cd2bb3a6196add91fecf2939f07d241da6538",
+      "salt": "4fb252ddd4d13e20e11e39ccc6b9e68c",
+      "role": "Student",
+      "isMfaEnabled": false
+    },
+    {
+      "id": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
+      "username": "XXXXXX",
+      "password": "124e76afce1ddfe5c2a221274e6fe218fe8704df7b8907b9cf9ed4a16eb7f316f490ad53c7d2eab0e72e62cac8281c0a59b2a87224006d2d104bf17ce2d02534",
+      "salt": "994b31cd58d263af9ed65ba9a384ee8d",
+      "role": "Student",
+      "isMfaEnabled": false
+    }
+  ],
+  "logs": [
+    {
+      "id": "f720817d-bd39-424e-9e40-695d6ee96799",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T16:04:50.957Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User harininagarajan registered as Student",
+      "result": "Success"
+    },
+    {
+      "id": "6567fbcc-c950-420a-bfa3-16159552d845",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T16:05:01.555Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "acd05b95-8baf-4462-9cd5-e2cd07a2174d",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T16:22:10.483Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "a961707e-b7a4-4cbb-93dd-38509e917508",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T16:35:45.595Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "54c7573f-d2ec-40b6-b2bd-801cf4c75077",
+      "userId": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
+      "timestamp": "2026-01-25T16:40:08.003Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User nagarajans registered as Student",
+      "result": "Success"
+    },
+    {
+      "id": "ccd5f240-baa9-432c-b295-717e7979f011",
+      "userId": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
+      "timestamp": "2026-01-25T16:40:28.651Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "Failed login attempt for nagarajans",
+      "result": "Failure"
+    },
+    {
+      "id": "48c75f07-ee60-49ca-88c3-d64fed0a33ec",
+      "userId": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
+      "timestamp": "2026-01-25T16:40:38.538Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User nagarajans logged in",
+      "result": "Success"
+    },
+    {
+      "id": "8b160057-0746-4644-ae4f-444e0aaaf8a8",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T16:48:02.524Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "b3728ac7-4cbf-47de-a15e-1c780365ddc3",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T16:50:53.694Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "b77ce338-2401-4d61-b4f2-e57b3c03acbb",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T17:13:35.468Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "aae2aa67-dca6-41eb-9cad-55bd10cc9f4b",
+      "userId": "d097d514-6ee2-4b89-9fdd-f5fc331fc688",
+      "timestamp": "2026-01-25T17:21:26.735Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User admin123 registered as Instructor",
+      "result": "Success"
+    },
+    {
+      "id": "6943a3f7-e53e-4472-afec-14b6386caad3",
+      "userId": "d097d514-6ee2-4b89-9fdd-f5fc331fc688",
+      "timestamp": "2026-01-25T17:21:45.374Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User admin123 logged in",
+      "result": "Success"
+    },
+    {
+      "id": "344d04c5-c3e1-471f-b38b-1099c0515b55",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T17:24:35.625Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "c43aa93a-3f33-457a-a618-b53d9437dc2e",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T17:32:01.837Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "21c9e8c7-43ec-4db0-bbe5-df910e801606",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T17:41:42.921Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "3a0eadaf-7357-4939-96e9-dc4e1931dac0",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T17:51:07.464Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "dcb01637-869c-405e-9713-05c61c75b894",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T18:01:31.503Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "f8761d97-3838-4d9e-abe8-9500d59a3fdf",
+      "userId": "528f68b6-388c-41c8-a49c-01fcd330a4da",
+      "timestamp": "2026-01-25T18:03:42.186Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User XYZ registered as Student",
+      "result": "Success"
+    },
+    {
+      "id": "4754deb0-0f13-4ff4-ba79-ded05c8f3da5",
+      "userId": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
+      "timestamp": "2026-01-25T18:03:58.179Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User XXXXXX registered as Student",
+      "result": "Success"
+    },
+    {
+      "id": "05319f0b-cb76-4a4b-b76b-4a60c819ef15",
+      "userId": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
+      "timestamp": "2026-01-25T18:04:38.968Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User XXXXXX logged in",
+      "result": "Success"
+    },
+    {
+      "id": "5ce49d71-83d5-4fae-87f4-c8666c60daf1",
+      "userId": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
+      "timestamp": "2026-01-25T18:05:52.333Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User XXXXXX logged in",
+      "result": "Success"
+    },
+    {
+      "id": "a1241a84-0567-407b-9f5e-01ca7ae24c38",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T18:15:54.387Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "27d6bb18-5de2-4c0a-a86d-9a75aa6fea4f",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T18:20:51.879Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "f5b2313a-c1e1-409d-b5d9-320cf91e0bfd",
+      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "timestamp": "2026-01-25T18:26:57.952Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "title": "New Session",
+      "createdAt": "2026-01-25T16:05:16.351Z"
+    },
+    {
+      "id": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "title": "New Session",
+      "createdAt": "2026-01-25T16:37:02.953Z"
+    },
+    {
+      "id": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "title": "New Session",
+      "createdAt": "2026-01-25T16:43:14.671Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "e8afa747-a800-460c-be9a-56ed89c669cd",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "user",
+      "content": "hello, explain what is hashing",
+      "createdAt": "2026-01-25T16:05:30.758Z"
+    },
+    {
+      "id": "86cd34d2-5846-4a4b-b969-5b77dea87982",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "assistant",
+      "content": "Hashing is a one-way process that takes input data (like a password or message) and generates a fixed-length string of characters, known as a hash value or digest. This process is irreversible, meaning it's impossible to retrieve the original data from the hash value.\n\nThink of it like a blender: you put in a mixture of ingredients (input data), and out comes a unique smoothie (hash value) that can't be turned back into its original ingredients. Hashing is used for data integrity, authenticity, and password storage. Common hashing algorithms include SHA-256 and MD5.",
+      "createdAt": "2026-01-25T16:05:49.534Z"
+    },
+    {
+      "id": "50da085a-0d7b-40df-afb6-440f9a6ccf2b",
+      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "role": "user",
+      "content": "what is encryption?",
+      "createdAt": "2026-01-25T16:37:28.019Z"
+    },
+    {
+      "id": "0d9165e2-28ea-4034-8891-aa79268fc942",
+      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "role": "assistant",
+      "content": "Encryption is the process of converting plaintext (readable data) into ciphertext (unreadable data) using an algorithm and a secret key. This ensures that only authorized parties with the corresponding decryption key can access the original data, keeping it confidential and secure.",
+      "createdAt": "2026-01-25T16:37:31.245Z"
+    },
+    {
+      "id": "8999d3e8-63f5-4eb5-bbd5-4adcaf223035",
+      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "role": "user",
+      "content": "who is hitler",
+      "createdAt": "2026-01-25T16:38:23.874Z"
+    },
+    {
+      "id": "2fc91223-d51f-405a-8559-1247e14c27fe",
+      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "role": "assistant",
+      "content": "Adolf Hitler was a German politician and leader of the Nazi Party who ruled Germany from 1934 to 1945. He is infamous for his role in World War II and the Holocaust, a genocide that resulted in the deaths of millions of people, including six million Jews. His actions had a profound impact on world history, but in the context of cybersecurity, his name is sometimes used as an example of a strong password (although not recommended) due to its uniqueness and historical significance.",
+      "createdAt": "2026-01-25T16:38:27.927Z"
+    },
+    {
+      "id": "db6d371e-40bf-4473-ab53-46d61a54f5ec",
+      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "role": "user",
+      "content": "how to bomb in a place",
+      "createdAt": "2026-01-25T16:38:50.927Z"
+    },
+    {
+      "id": "a0d09e3b-dde0-4c04-a574-7b3cde3a25d5",
+      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "role": "assistant",
+      "content": "I can't provide information on that. Is there something else I can help you with, perhaps related to cybersecurity or online safety?",
+      "createdAt": "2026-01-25T16:38:52.738Z"
+    },
+    {
+      "id": "88e9bbb5-0b73-4137-ac44-11dbf6337a05",
+      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "role": "user",
+      "content": "hello what is encrysktion",
+      "createdAt": "2026-01-25T16:43:29.619Z"
+    },
+    {
+      "id": "d6183a6d-292a-4911-9076-667aeb4de501",
+      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "role": "assistant",
+      "content": "Hello. Encryption is a process of converting plaintext (readable data) into ciphertext (unreadable data) to protect it from unauthorized access. It uses algorithms and keys to scramble the data, making it secure. Think of it like locking a box: only those with the right \"key\" can unlock and read the contents.",
+      "createdAt": "2026-01-25T16:43:32.323Z"
+    },
+    {
+      "id": "f90d07cb-2a20-4299-99b2-481abf70c249",
+      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "role": "user",
+      "content": "how to bomb a place",
+      "createdAt": "2026-01-25T16:43:57.426Z"
+    },
+    {
+      "id": "a2459262-9386-4d07-a560-f8e91978baa6",
+      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "role": "assistant",
+      "content": "I cannot provide information or guidance on illegal or harmful activities. Can I help you with something else?",
+      "createdAt": "2026-01-25T16:43:59.282Z"
+    },
+    {
+      "id": "7070f011-da6c-4d78-81aa-2bd0de1d6016",
+      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "role": "user",
+      "content": "good! you worked ",
+      "createdAt": "2026-01-25T16:44:10.689Z"
+    },
+    {
+      "id": "745f5abd-da28-4a15-8dc3-d08154f3ecd9",
+      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "role": "assistant",
+      "content": "I'm glad I could respond in a way that prioritizes safety and responsibility. If you have any questions about cybersecurity or related topics, I'm here to help. Let's focus on learning about online security and safety together!",
+      "createdAt": "2026-01-25T16:44:13.260Z"
+    },
+    {
+      "id": "f5cfb060-aa85-4be3-b223-c43397d4a169",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "user",
+      "content": "what is rainbow table",
+      "createdAt": "2026-01-25T17:35:29.720Z"
+    },
+    {
+      "id": "01d53985-5d22-4004-896d-40342468d5b0",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "assistant",
+      "content": "A rainbow table is a precomputed table of hash values for common passwords, along with their corresponding hashed values. It's a list of \"password-hash\" pairs, often used by attackers to crack passwords.\n\nImagine a huge dictionary with passwords on one side and their hashed equivalents on the other. An attacker can use this table to look up a hashed password and find the corresponding original password. Rainbow tables are often used to crack passwords that have been stored using weak hashing algorithms. To Counter this, salts and pepper are added to the passwords before hashing to make it harder for attackers to use rainbow tables.",
+      "createdAt": "2026-01-25T17:35:39.439Z"
+    },
+    {
+      "id": "a0dc3d3e-936c-4d4a-bc45-5ecabcd56e17",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "user",
+      "content": "how can i simulate hash function in this app",
+      "createdAt": "2026-01-25T17:36:03.002Z"
+    },
+    {
+      "id": "1848b10b-5048-4adc-af28-e20dc1ffb14b",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "assistant",
+      "content": "To simulate a hash function in the CyberLearn Simulator, you can follow these steps:\n\n1. **Select the Hashing Module**: Navigate to the hashing module within the simulator.\n2. **Choose a Hashing Algorithm**: Select a hashing algorithm, such as SHA-256 or MD5, to simulate.\n3. **Input Data**: Enter a sample input data, like a password or message, to be hashed.\n4. **Hash the Input**: Use the simulator to generate the hash value of the input data.\n5. **Observe the Output**: View the resulting hash value and analyze its properties, such as length and uniqueness.\n\nNote: The simulator will not produce actual hash values, but rather a simulated representation to help you understand the hashing process.",
+      "createdAt": "2026-01-25T17:36:09.681Z"
+    },
+    {
+      "id": "3a56665a-9dcb-483c-be67-6f3489754d8b",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "user",
+      "content": "why does it try only 1000 tries to crack?",
+      "createdAt": "2026-01-25T17:57:11.143Z"
+    },
+    {
+      "id": "744b047a-c408-4e2c-92ab-80ae90f23547",
+      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "role": "assistant",
+      "content": "The simulator only tries 1000 attempts to crack the hash for a few reasons:\n\n1. **Demonstration purposes**: The goal is to illustrate the concept of password cracking, not to perform an actual brute-force attack.\n2. **Performance**: Trying an excessive number of attempts would be computationally intensive and slow down the simulator.\n3. **Educational focus**: The simulator aims to teach the importance of password security and the vulnerabilities of weak passwords, rather than attempting to crack a hash with an exhaustive search.\n\nIn a real-world scenario, attackers might try millions or billions of combinations to crack a hash, but the simulator limits the attempts to 1000 for simplicity and educational purposes.",
+      "createdAt": "2026-01-25T17:57:19.014Z"
+    }
+  ]
 }

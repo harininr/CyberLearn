@@ -31,7 +31,7 @@ export function Sidebar() {
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="font-display font-bold text-lg tracking-tight">CyberEase</h1>
+            <h1 className="font-display font-bold text-lg tracking-tight">CyberLearn</h1>
             <p className="text-xs text-muted-foreground">Sim & Learn</p>
           </div>
         </div>

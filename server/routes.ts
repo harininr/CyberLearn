@@ -7,10 +7,17 @@ import crypto from "crypto";
 import OpenAI from "openai";
 
 // OpenRouter setup (using Replit AI Integrations)
-const openrouter = new OpenAI({
-  baseURL: process.env.AI_INTEGRATIONS_OPENROUTER_BASE_URL,
-  apiKey: process.env.AI_INTEGRATIONS_OPENROUTER_API_KEY,
-});
+const openrouter = process.env.OPENROUTER_API_KEY
+  ? new OpenAI({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      baseURL: "https://openrouter.ai/api/v1",
+      defaultHeaders: {
+        "HTTP-Referer": "http://localhost:5000",
+        "X-Title": "CyberSec Simulator",
+      },
+    })
+  : null;
+
 
 export async function registerRoutes(
   httpServer: Server,
@@ -363,7 +370,7 @@ export async function registerRoutes(
         const stream = await openrouter.chat.completions.create({
             model: "meta-llama/llama-3.3-70b-instruct", // High quality, usually available
             messages: [
-                { role: "system", content: "You are an expert Cybersecurity Tutor for the 'CyberEase Simulator'. Explain concepts clearly, step-by-step. Do NOT generate actual keys or perform attacks, just explain them. Keep responses concise." },
+                { role: "system", content: "You are an expert Cybersecurity Tutor for the 'CyberLearn Simulator'. Explain concepts clearly, step-by-step. Do NOT generate actual keys or perform attacks, just explain them. Keep responses concise." },
                 ...history
             ],
             stream: true,
