@@ -18,7 +18,7 @@
  * 13.  FinalCTA               — full-bleed animated call-to-action
  * 14.  Footer                 — rich footer with sitemap, socials, built-by badge
  */
-
+  
 import {
   motion,
   useScroll,
@@ -440,7 +440,7 @@ function HeroSection({ onScrollTo }: { onScrollTo: (id: string) => void }) {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16 px-5"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16 px-5 font-sans"
       aria-labelledby="hero-heading"
     >
       {/* Parallax BG photo */}
