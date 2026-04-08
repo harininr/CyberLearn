@@ -1,7 +1,9 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 
-const DB_FILE = path.join(process.cwd(), 'cyberease.db');
+const DB_FILE = process.env.NODE_ENV === 'production'
+  ? '/data/cyberease.db'
+  : path.join(process.cwd(), 'cyberease.db');
 
 // Create database connection
 export const db = new Database(DB_FILE);
