@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState, useEffect } from "react";
 import { useBruteForce, useHash } from "@/hooks/use-modules";
-import { Loader2, Zap, Clock, Unlock, RotateCcw, Shield, AlertTriangle, Lock, ShieldAlert, Info, BarChart3, Cpu, Hash, Key } from "lucide-react";
+import { Loader2, Zap, Clock, Unlock, RotateCcw, Shield, AlertTriangle, Lock, ShieldAlert, Info, BarChart3, Cpu, Hash, Key, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
@@ -16,12 +16,14 @@ import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BackButton } from "@/components/ui/back-button";
 
 export default function AttackModule() {
   const [activeTab, setActiveTab] = useState<"simulator" | "education">("simulator");
 
   return (
     <Layout>
+      <BackButton to="/" label="Back to Dashboard" />
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-3">
           <ShieldAlert className="w-8 h-8 text-primary" />
@@ -92,9 +94,9 @@ function AttackSimulator() {
       const totalCombinations = Math.pow(charSetSize, passwordLength);
       const speedMultiplier = Math.pow(10, attackSpeed[0] - 1); // 10^0 to 10^4
       const hashesPerSecond = 1000 * speedMultiplier;
-      
+
       const seconds = totalCombinations / hashesPerSecond;
-      
+
       if (seconds < 1) {
         setEstimatedTime("Instantly");
       } else if (seconds < 60) {
@@ -112,7 +114,7 @@ function AttackSimulator() {
   }, [targetPassword, complexity, attackSpeed]);
 
   const getCharSetSize = (level: number): number => {
-    switch(level) {
+    switch (level) {
       case 1: return 10; // digits only
       case 2: return 36; // alphanumeric lowercase
       case 3: return 62; // alphanumeric mixed case
@@ -136,8 +138,8 @@ function AttackSimulator() {
 
   const handleAttack = () => {
     setSimulationResult(null);
-    attack.mutate({ 
-      targetHash, 
+    attack.mutate({
+      targetHash,
       complexity: complexity[0],
       hashAlgorithm,
       attackSpeed: attackSpeed[0]
@@ -186,7 +188,7 @@ function AttackSimulator() {
     if (/[A-Z]/.test(password)) score += 1;
     if (/[0-9]/.test(password)) score += 1;
     if (/[^A-Za-z0-9]/.test(password)) score += 1;
-    
+
     if (score <= 2) return { score, label: "Very Weak", color: "text-red-600" };
     if (score <= 3) return { score, label: "Weak", color: "text-orange-600" };
     if (score <= 4) return { score, label: "Moderate", color: "text-yellow-600" };
@@ -278,17 +280,16 @@ function AttackSimulator() {
                     {[1, 2, 3, 4, 5, 6].map((level) => (
                       <div
                         key={level}
-                        className={`h-1 rounded ${
-                          level <= passwordStrength.score
-                            ? passwordStrength.score <= 2
-                              ? "bg-red-500"
-                              : passwordStrength.score <= 3
+                        className={`h-1 rounded ${level <= passwordStrength.score
+                          ? passwordStrength.score <= 2
+                            ? "bg-red-500"
+                            : passwordStrength.score <= 3
                               ? "bg-orange-500"
                               : passwordStrength.score <= 4
-                              ? "bg-yellow-500"
-                              : "bg-green-500"
-                            : "bg-muted"
-                        }`}
+                                ? "bg-yellow-500"
+                                : "bg-green-500"
+                          : "bg-muted"
+                          }`}
                       />
                     ))}
                   </div>
@@ -316,14 +317,14 @@ function AttackSimulator() {
                     </SelectContent>
                   </Select>
                   <p className="text-xs text-muted-foreground">
-                    {hashAlgorithm === "md5" 
-                      ? "MD5 is fast but vulnerable to collisions" 
+                    {hashAlgorithm === "md5"
+                      ? "MD5 is fast but vulnerable to collisions"
                       : "SHA-256 is slower but more secure"}
                   </p>
                 </div>
 
-                <Button 
-                  onClick={handleSetup} 
+                <Button
+                  onClick={handleSetup}
                   disabled={!targetPassword || doHash.isPending}
                   className="w-full"
                 >
@@ -371,10 +372,10 @@ function AttackSimulator() {
                     <div className="flex justify-between items-center mb-2">
                       <Label>Character Set Complexity</Label>
                       <Badge variant="outline">
-                        {complexity[0] === 1 ? "Digits Only" : 
-                         complexity[0] === 2 ? "Alphanumeric" :
-                         complexity[0] === 3 ? "Mixed Case" :
-                         complexity[0] === 4 ? "With Symbols" : "Full ASCII"}
+                        {complexity[0] === 1 ? "Digits Only" :
+                          complexity[0] === 2 ? "Alphanumeric" :
+                            complexity[0] === 3 ? "Mixed Case" :
+                              complexity[0] === 4 ? "With Symbols" : "Full ASCII"}
                       </Badge>
                     </div>
                     <Slider
@@ -400,10 +401,10 @@ function AttackSimulator() {
                     <div className="flex justify-between items-center mb-2">
                       <Label>Attack Computing Power</Label>
                       <Badge variant="outline">
-                        {attackSpeed[0] === 1 ? "Home PC" : 
-                         attackSpeed[0] === 2 ? "Gaming Rig" :
-                         attackSpeed[0] === 3 ? "Server Farm" :
-                         attackSpeed[0] === 4 ? "Botnet" : "Supercomputer"}
+                        {attackSpeed[0] === 1 ? "Home PC" :
+                          attackSpeed[0] === 2 ? "Gaming Rig" :
+                            attackSpeed[0] === 3 ? "Server Farm" :
+                              attackSpeed[0] === 4 ? "Botnet" : "Supercomputer"}
                       </Badge>
                     </div>
                     <Slider
@@ -432,9 +433,9 @@ function AttackSimulator() {
                 </Alert>
 
                 <div className="space-y-3">
-                  <Button 
-                    variant="destructive" 
-                    onClick={handleAttack} 
+                  <Button
+                    variant="destructive"
+                    onClick={handleAttack}
                     disabled={attack.isPending || !targetHash}
                     className="w-full"
                     size="lg"
@@ -451,9 +452,9 @@ function AttackSimulator() {
                       </>
                     )}
                   </Button>
-                  
-                  <Button 
-                    variant="outline" 
+
+                  <Button
+                    variant="outline"
                     onClick={resetSimulation}
                     className="w-full"
                   >
@@ -479,7 +480,7 @@ function AttackSimulator() {
                     </div>
                     <Zap className="w-8 h-8 text-primary absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse" />
                   </div>
-                  
+
                   <div>
                     <h3 className="font-bold text-lg mb-2">Attack In Progress</h3>
                     <p className="text-muted-foreground">Simulating brute force password cracking...</p>
@@ -526,8 +527,8 @@ function AttackSimulator() {
                   )}
                 </CardTitle>
                 <CardDescription>
-                  {simulationResult.success 
-                    ? "The password was vulnerable to brute force" 
+                  {simulationResult.success
+                    ? "The password was vulnerable to brute force"
                     : "The password resisted the attack parameters"}
                 </CardDescription>
               </CardHeader>
@@ -577,7 +578,7 @@ function AttackSimulator() {
                 )}
 
                 <div className="space-y-4">
-                  <Button 
+                  <Button
                     variant={simulationResult.success ? "destructive" : "default"}
                     onClick={() => setShowDetails(!showDetails)}
                     className="w-full"
@@ -657,11 +658,11 @@ function EducationSection() {
 
   const calculateCombinations = () => {
     let charSet = 26; // lowercase letters
-    
+
     if (includeMixedCase) charSet += 26; // uppercase letters
     if (includeNumbers) charSet += 10; // digits
     if (includeSymbols) charSet += 32; // common symbols
-    
+
     return Math.pow(charSet, passwordLength[0]);
   };
 

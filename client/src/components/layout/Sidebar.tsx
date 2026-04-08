@@ -1,12 +1,15 @@
 import { Link, useLocation } from "wouter";
-import { 
-  Shield, 
-  Key, 
-  Hash, 
-  Bug, 
-  LayoutDashboard, 
-  LogOut, 
-  UserCircle 
+import {
+  Shield,
+  Key,
+  Hash,
+  Bug,
+  LayoutDashboard,
+  LogOut,
+  UserCircle,
+  FileSignature,
+  Users,
+  Code
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/use-auth";
@@ -14,8 +17,12 @@ import { Button } from "@/components/ui/button";
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "/" },
+  { icon: UserCircle, label: "Authentication", href: "/authentication" },
+  { icon: Users, label: "Access Control", href: "/accesscontrol" },
   { icon: Key, label: "Cryptography", href: "/crypto" },
-  { icon: Hash, label: "Hashing & Signatures", href: "/hashing" },
+  { icon: Hash, label: "Hashing", href: "/hashing" },
+  { icon: FileSignature, label: "Digital Signatures", href: "/digitalsignature" },
+  { icon: Code, label: "Encoding", href: "/encoding" },
   { icon: Bug, label: "Attack Simulator", href: "/attack" },
 ];
 
@@ -32,7 +39,6 @@ export function Sidebar() {
           </div>
           <div>
             <h1 className="font-display font-bold text-lg tracking-tight">CyberLearn</h1>
-            <p className="text-xs text-muted-foreground">Sim & Learn</p>
           </div>
         </div>
       </div>
@@ -43,8 +49,8 @@ export function Sidebar() {
           return (
             <Link key={item.href} href={item.href} className={cn(
               "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group",
-              isActive 
-                ? "bg-primary/10 text-primary font-medium" 
+              isActive
+                ? "bg-primary/10 text-primary font-medium"
                 : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )}>
               <item.icon className={cn(
@@ -67,8 +73,8 @@ export function Sidebar() {
             <p className="text-xs text-muted-foreground truncate">{user?.role}</p>
           </div>
         </div>
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           className="w-full justify-start text-muted-foreground hover:text-destructive hover:bg-destructive/10 hover:border-destructive/20"
           onClick={() => logout.mutate()}
         >

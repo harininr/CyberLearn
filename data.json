@@ -1,258 +1,798 @@
 {
   "users": [
     {
-      "id": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
+      "id": "86656009-5844-44b6-87b9-320ba031a539",
       "username": "harininagarajan",
-      "password": "b1003859998209bb9a9c871eb4123b66894c3dc1753512943750071d86bd6fa7f30a6f36f0ddd77241034b56e0e038ab1c24e5e553b7741b7af7db84c8349e0a",
-      "salt": "ffa4e7e395b6fb1a7d4aaba6fe012316",
+      "password": "6bb422bee77255f259ca5fd1b92cb7328c3e6e4cb99cf7c183e2bcf36c0cae04d46907990d72af69591d9bc8962029d46378651ddb04729233869831726c70fd",
+      "salt": "b4ab4772ba769858f784df5208a1d235",
       "role": "Student",
       "isMfaEnabled": false
     },
     {
-      "id": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
-      "username": "nagarajans",
-      "password": "f8b229d244525d1aec600d9ae3a75339e3c6a625d6bbaf6cc1de40ba94ea75fbc3abae3fa8ea9b75b37ef2284fd59874e4a7facc6753f1512c1058061d526110",
-      "salt": "44ded49d5a3d69ac7c1dc11c4517af38",
-      "role": "Student",
-      "isMfaEnabled": false
-    },
-    {
-      "id": "d097d514-6ee2-4b89-9fdd-f5fc331fc688",
-      "username": "admin123",
-      "password": "2a6893a552e4f14e411c7cb2b2f86d4c5676eb092cd27aa96e304b85dfebb07f44f2a4a68233730d3d3acc43aafa89d57faa674ee8c3aeeebb682ea14ecc34c8",
-      "salt": "13e72919eb62b85de042241fe90a7e4c",
+      "id": "d259785c-abb7-42ec-a1e1-ce6ac5a5500a",
+      "username": "harininagarajan4",
+      "password": "3ac743864c99215175eba7f0208ec28d6f779c1645005aa9629ffbcde3a490bb08e0523d65e4099149ef8f6892a910d41007947aa1a572d0b63f4bb347e3ec06",
+      "salt": "82f16f2e7495b7be4761853674f97175",
       "role": "Instructor",
       "isMfaEnabled": false
     },
     {
-      "id": "528f68b6-388c-41c8-a49c-01fcd330a4da",
-      "username": "XYZ",
-      "password": "22a045cdcc33fab1b33e42dfed6f8f553d64986afd4c7b73284f2f6055c3a17b91740bad70e7e5cf11b4e4c85a6cd2bb3a6196add91fecf2939f07d241da6538",
-      "salt": "4fb252ddd4d13e20e11e39ccc6b9e68c",
+      "id": "c922dde8-dfa1-4da5-a34b-dfc7f64fd2d5",
+      "username": "harini",
+      "password": "86b5379ab2f397cd7ed5a0cd10d62b1be0bf8bda637221c34e6766e5e0ee81286bf94b7e928bb8f2dd0457974b49b8fa21228742d0918e144847b756318340d8",
+      "salt": "55a9422161fc022ca632b05bd10f520b",
       "role": "Student",
       "isMfaEnabled": false
     },
     {
-      "id": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
-      "username": "XXXXXX",
-      "password": "124e76afce1ddfe5c2a221274e6fe218fe8704df7b8907b9cf9ed4a16eb7f316f490ad53c7d2eab0e72e62cac8281c0a59b2a87224006d2d104bf17ce2d02534",
-      "salt": "994b31cd58d263af9ed65ba9a384ee8d",
+      "id": "b3d3a7bd-3e9f-4514-b7ca-5483890da72c",
+      "username": "harini05",
+      "password": "43603d996a1b7bcdad9bc24ca215feec1d18808c9d5be531c0b59c0a077ef6cb530d4c9423ba4dd4c24fc5c4d3587ac636d3946c0af64ebf6048ccd48e52ff04",
+      "salt": "31ce1f2c6453ead5e3edcc41a25b99bf",
+      "role": "Student",
+      "isMfaEnabled": false
+    },
+    {
+      "id": "a33225d5-447a-48a5-a7ee-99705fb6ccc0",
+      "username": "hariniharini",
+      "password": "8e8f95d11fa79f3757d69a991e23a3a7ad9307f1765ce90456777830b38559d10d5965ee261ced60b63a3a49d063bef548f420f8d5c6281a0aaba5a980344fbc",
+      "salt": "dfbd4e1256b291c9255f1d538fac8aaf",
       "role": "Student",
       "isMfaEnabled": false
     }
   ],
   "logs": [
     {
-      "id": "f720817d-bd39-424e-9e40-695d6ee96799",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T16:04:50.957Z",
+      "id": "f1326dce-172e-4940-b94f-677e6439e46f",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-26T11:39:50.469Z",
       "module": "Auth",
       "action": "Register",
       "details": "User harininagarajan registered as Student",
       "result": "Success"
     },
     {
-      "id": "6567fbcc-c950-420a-bfa3-16159552d845",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T16:05:01.555Z",
+      "id": "1f398af8-8aa1-4652-a4ba-b029658ec34c",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-26T11:39:58.933Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
       "result": "Success"
     },
     {
-      "id": "acd05b95-8baf-4462-9cd5-e2cd07a2174d",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T16:22:10.483Z",
+      "id": "5f95c07a-14c4-4571-82bc-c50333673719",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-26T11:47:17.593Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
       "result": "Success"
     },
     {
-      "id": "a961707e-b7a4-4cbb-93dd-38509e917508",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T16:35:45.595Z",
+      "id": "9d415b7e-900d-49a7-a8e0-38054803c6ff",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-26T16:09:38.558Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
       "result": "Success"
     },
     {
-      "id": "54c7573f-d2ec-40b6-b2bd-801cf4c75077",
-      "userId": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
-      "timestamp": "2026-01-25T16:40:08.003Z",
+      "id": "6b982cf9-83c4-4ae1-bfe8-a7b808f916db",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T15:12:18.412Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "2827f052-5d77-4f51-9f20-fc9dfabea62e",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T15:14:37.489Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "6894907d-b7ef-483e-9a7e-da24ded82072",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T15:27:28.677Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "a77602e5-220e-40db-8738-edc532be67d1",
+      "userId": "d259785c-abb7-42ec-a1e1-ce6ac5a5500a",
+      "timestamp": "2026-01-27T15:31:07.358Z",
       "module": "Auth",
       "action": "Register",
-      "details": "User nagarajans registered as Student",
+      "details": "User harininagarajan4 registered as Instructor",
       "result": "Success"
     },
     {
-      "id": "ccd5f240-baa9-432c-b295-717e7979f011",
-      "userId": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
-      "timestamp": "2026-01-25T16:40:28.651Z",
+      "id": "cf0748ac-e949-41be-a054-740e84d66c93",
+      "userId": "d259785c-abb7-42ec-a1e1-ce6ac5a5500a",
+      "timestamp": "2026-01-27T15:31:15.385Z",
       "module": "Auth",
       "action": "Login",
-      "details": "Failed login attempt for nagarajans",
+      "details": "User harininagarajan4 logged in",
+      "result": "Success"
+    },
+    {
+      "id": "be3093be-0626-4e8c-81d4-e52c70099e06",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T15:33:06.544Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "aa270230-acf8-427e-a596-1529912cbb56",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T15:41:57.665Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "ee27a25e-d6ee-456d-9836-0ec0e2b47d17",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T15:51:54.975Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "8810d85b-c359-4494-b886-0d81237a3fb7",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T15:52:21.743Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "2ab7ce2a-01ed-44cb-a7d6-13827679319b",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T17:38:09.705Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "1533413a-793a-4228-9660-3888ffb066a9",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T18:14:52.744Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "c5fcf767-cbe8-4a52-9e67-c1f778665746",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T18:20:52.220Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "8e7a1b23-6a2b-48af-8f74-75db4805ac9d",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T18:33:32.015Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "96c5e504-a74c-45dc-8308-4b546230f25f",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-27T19:10:50.266Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "8f78e546-0e09-4b62-828c-a0e21cab707d",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T11:09:58.179Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "4fedfbdc-f52d-43e1-b6d7-57275e47f2ad",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T14:55:47.680Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "1230cd91-429c-44c9-a289-40b518b6af80",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T14:58:39.883Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "8370f5ac-76ba-4988-870e-6fbbc62077a9",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T15:27:48.876Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "7e8717d5-36a9-482d-b2be-c7c57420b6aa",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T15:34:38.978Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "39732e0f-9edb-47df-b623-b18fefe2fdce",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T16:15:45.844Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "b1aa2d3a-d5d3-4bcd-95da-19fc6d1e3d3a",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T16:23:39.501Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "db8adc28-d8b4-4c39-8e98-c45b53fb7e8a",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T16:30:58.316Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "0c2e59bd-3372-4f5d-a4d5-ca413d3c0757",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T16:40:30.785Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "23b0c8ec-40bd-422f-b8c6-53caf1406f64",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:01:28.632Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "f6962140-6442-4b20-8878-5e151dca087d",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:11:08.407Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "d05c7150-3412-4564-9c78-412ea0a8a6b6",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:11:32.695Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "5e9bc607-e9c1-4294-ae89-a1639e7fceb2",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:13:28.400Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "38bc0644-f4d4-444d-b0e5-889b2e223d90",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:18:00.911Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "3ca2a7ab-74ac-40d4-87d0-08778ba8d5ac",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:18:10.201Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "e64d6905-9e33-4199-b0a0-9d384c1b64d4",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:21:31.455Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "ccdfe7fd-d811-4715-9e40-02ed1e24058e",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:24:42.053Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "fa325bc3-f262-40d2-af94-36df70d089b0",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:36:58.576Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "d868d88d-ea2b-42da-990b-27650d0e3494",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:38:49.602Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "e18d5dc4-af8f-4979-bbf5-4b8d865aef6c",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:41:27.371Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "e3905b23-eea6-4cd7-93cb-45dae616087b",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T17:55:27.853Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "5dde455d-c02a-4332-a796-4520540aa488",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:02:33.120Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "90e19a50-dfb3-4484-9f54-f406a8499d86",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:06:03.024Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "daf6d3c0-4015-4bc6-973d-78564744007e",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:06:28.643Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "c2ec2e58-cdeb-4a3a-98d0-7e078525dd9f",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:11:15.920Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "76891e3c-9cfd-48bc-aa1d-d157559b99f7",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:21:06.928Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "76fe64ff-a425-4a42-9098-ae681b9d0f5a",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:29:33.578Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "8de6d3cd-83aa-4c7c-b403-63a9d4c5c923",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:37:09.056Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "e29a5e74-48b9-4224-9f47-560c96b284bf",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:37:20.393Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "69f0d75b-eeee-40b8-807a-7906e32cf203",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:43:12.714Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "e08ef423-2575-4061-8578-2efc7fde66d8",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:44:46.175Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "69900f80-3060-49b4-8aa0-71ca34d847e6",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:50:01.492Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "186224dc-83b4-4823-a448-41f643224932",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:53:26.933Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "4154f411-02b3-4fa1-9e7c-9edea23d6a75",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T18:56:52.169Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "ba9a47d9-46e0-4d79-b694-517f3d34d47e",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:00:58.669Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "9d17a152-7ee0-4bf9-b654-7d394644bcca",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:05:53.346Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "35fa617a-aa08-4b1c-ade7-1519cd467c1e",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:20:28.604Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "66955483-ab0b-4959-9eb7-926af72c6094",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:22:02.900Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "ab89d57a-bfb3-458c-8f19-92eef8b4692d",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:23:53.614Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "f5a8d6b4-868a-4f0f-8209-afd6063fc778",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:28:18.982Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "58aca937-5553-4a4b-9e2f-0d77ec2c6b16",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:34:28.449Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "efb8e36a-e7e5-4ff5-a756-68c2ed6a5077",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:43:14.831Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "b0fc8008-8c16-4ba4-8081-35391035a9ce",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:48:24.720Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "9c594e18-1313-42fc-afb9-13059c5a0cb0",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:51:37.870Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "3a0cee4f-0550-4b2f-b177-917f46667165",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T19:52:05.116Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "685d03b6-2542-4012-a895-0c815ba406e0",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:02:33.943Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "479ea008-cce9-486a-8eb9-d5322f237375",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:10:01.698Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "85267b58-d60b-416a-a32f-f36a2e48958d",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:14:45.602Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "36eade78-f2a8-4162-a97e-96a03cdee795",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:18:22.754Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "276cfcae-d6e8-408e-8576-ba419e68d798",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:23:52.006Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "7987390c-e544-4006-82ed-6f5f56b7aaef",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:38:11.484Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "1a8a9c1b-9a8d-4803-9af9-772f7c93e07e",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:46:53.851Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "bfd381d7-9677-48d2-bd51-c528b58fc62c",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:53:25.086Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "4db47c78-36bc-4fb4-ae15-46b32d85e235",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:54:33.356Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "6ee669f6-202c-4b6b-9017-71c8ee74e906",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-28T20:55:31.086Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "479ef44d-2201-4b56-9c21-9813b22efa33",
+      "userId": "c922dde8-dfa1-4da5-a34b-dfc7f64fd2d5",
+      "timestamp": "2026-01-28T21:31:24.046Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User harini registered as Student",
+      "result": "Success"
+    },
+    {
+      "id": "fbfb7a9b-d97b-4286-9a9b-9c6232eb5927",
+      "userId": "b3d3a7bd-3e9f-4514-b7ca-5483890da72c",
+      "timestamp": "2026-01-28T21:31:34.021Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User harini05 registered as Student",
+      "result": "Success"
+    },
+    {
+      "id": "0da9c0ac-93b4-48b7-9b13-1b0b9ef7b80b",
+      "userId": "a33225d5-447a-48a5-a7ee-99705fb6ccc0",
+      "timestamp": "2026-01-28T21:31:41.716Z",
+      "module": "Auth",
+      "action": "Register",
+      "details": "User hariniharini registered as Student",
+      "result": "Success"
+    },
+    {
+      "id": "f708febf-f8bf-4405-ac07-808bf8dfeac1",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T05:08:12.972Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "84f284c3-0d84-49ba-9f5b-db8295e19c70",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T05:09:13.445Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "User harininagarajan logged in",
+      "result": "Success"
+    },
+    {
+      "id": "eda3f1fe-1ba8-4934-8d1b-d457ea8ed009",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T16:27:31.889Z",
+      "module": "Auth",
+      "action": "Login",
+      "details": "Failed login attempt for harininagarajan",
       "result": "Failure"
     },
     {
-      "id": "48c75f07-ee60-49ca-88c3-d64fed0a33ec",
-      "userId": "2e2ff045-8353-466e-95eb-32ea91fcf86e",
-      "timestamp": "2026-01-25T16:40:38.538Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User nagarajans logged in",
-      "result": "Success"
-    },
-    {
-      "id": "8b160057-0746-4644-ae4f-444e0aaaf8a8",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T16:48:02.524Z",
+      "id": "7cb5ce3b-ad86-4b7a-b623-741e010d31b0",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T16:27:47.015Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
       "result": "Success"
     },
     {
-      "id": "b3728ac7-4cbf-47de-a15e-1c780365ddc3",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T16:50:53.694Z",
+      "id": "2d0247f6-21b1-4f0d-9de7-1ad8a9a98e39",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T16:48:02.390Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
       "result": "Success"
     },
     {
-      "id": "b77ce338-2401-4d61-b4f2-e57b3c03acbb",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T17:13:35.468Z",
+      "id": "feaea3f9-6347-4075-8142-ce5b336f42ae",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T16:54:24.664Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
       "result": "Success"
     },
     {
-      "id": "aae2aa67-dca6-41eb-9cad-55bd10cc9f4b",
-      "userId": "d097d514-6ee2-4b89-9fdd-f5fc331fc688",
-      "timestamp": "2026-01-25T17:21:26.735Z",
-      "module": "Auth",
-      "action": "Register",
-      "details": "User admin123 registered as Instructor",
-      "result": "Success"
-    },
-    {
-      "id": "6943a3f7-e53e-4472-afec-14b6386caad3",
-      "userId": "d097d514-6ee2-4b89-9fdd-f5fc331fc688",
-      "timestamp": "2026-01-25T17:21:45.374Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User admin123 logged in",
-      "result": "Success"
-    },
-    {
-      "id": "344d04c5-c3e1-471f-b38b-1099c0515b55",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T17:24:35.625Z",
+      "id": "64de01c7-af09-44ee-89a4-d0471de781ec",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T16:58:44.775Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
       "result": "Success"
     },
     {
-      "id": "c43aa93a-3f33-457a-a618-b53d9437dc2e",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T17:32:01.837Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User harininagarajan logged in",
-      "result": "Success"
-    },
-    {
-      "id": "21c9e8c7-43ec-4db0-bbe5-df910e801606",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T17:41:42.921Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User harininagarajan logged in",
-      "result": "Success"
-    },
-    {
-      "id": "3a0eadaf-7357-4939-96e9-dc4e1931dac0",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T17:51:07.464Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User harininagarajan logged in",
-      "result": "Success"
-    },
-    {
-      "id": "dcb01637-869c-405e-9713-05c61c75b894",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T18:01:31.503Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User harininagarajan logged in",
-      "result": "Success"
-    },
-    {
-      "id": "f8761d97-3838-4d9e-abe8-9500d59a3fdf",
-      "userId": "528f68b6-388c-41c8-a49c-01fcd330a4da",
-      "timestamp": "2026-01-25T18:03:42.186Z",
-      "module": "Auth",
-      "action": "Register",
-      "details": "User XYZ registered as Student",
-      "result": "Success"
-    },
-    {
-      "id": "4754deb0-0f13-4ff4-ba79-ded05c8f3da5",
-      "userId": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
-      "timestamp": "2026-01-25T18:03:58.179Z",
-      "module": "Auth",
-      "action": "Register",
-      "details": "User XXXXXX registered as Student",
-      "result": "Success"
-    },
-    {
-      "id": "05319f0b-cb76-4a4b-b76b-4a60c819ef15",
-      "userId": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
-      "timestamp": "2026-01-25T18:04:38.968Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User XXXXXX logged in",
-      "result": "Success"
-    },
-    {
-      "id": "5ce49d71-83d5-4fae-87f4-c8666c60daf1",
-      "userId": "89134e45-ea2f-43ad-aa18-d583ae4e5219",
-      "timestamp": "2026-01-25T18:05:52.333Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User XXXXXX logged in",
-      "result": "Success"
-    },
-    {
-      "id": "a1241a84-0567-407b-9f5e-01ca7ae24c38",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T18:15:54.387Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User harininagarajan logged in",
-      "result": "Success"
-    },
-    {
-      "id": "27d6bb18-5de2-4c0a-a86d-9a75aa6fea4f",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T18:20:51.879Z",
-      "module": "Auth",
-      "action": "Login",
-      "details": "User harininagarajan logged in",
-      "result": "Success"
-    },
-    {
-      "id": "f5b2313a-c1e1-409d-b5d9-320cf91e0bfd",
-      "userId": "05a6d855-2cc2-43dc-8d7f-75e7e4fdf382",
-      "timestamp": "2026-01-25T18:26:57.952Z",
+      "id": "cd8f1d1b-c052-4d3f-9e4e-a6906130eb9c",
+      "userId": "86656009-5844-44b6-87b9-320ba031a539",
+      "timestamp": "2026-01-29T17:01:07.017Z",
       "module": "Auth",
       "action": "Login",
       "details": "User harininagarajan logged in",
@@ -261,161 +801,147 @@
   ],
   "conversations": [
     {
-      "id": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "e1281847-e6b2-4862-a39e-b2210092bfeb",
       "title": "New Session",
-      "createdAt": "2026-01-25T16:05:16.351Z"
+      "createdAt": "2026-01-27T15:33:18.011Z"
     },
     {
-      "id": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "id": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "title": "New Session",
-      "createdAt": "2026-01-25T16:37:02.953Z"
+      "createdAt": "2026-01-27T17:44:30.313Z"
     },
     {
-      "id": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "id": "b2c71f29-38e4-437f-8af3-8db8e91fe097",
       "title": "New Session",
-      "createdAt": "2026-01-25T16:43:14.671Z"
+      "createdAt": "2026-01-29T16:52:28.178Z"
     }
   ],
   "messages": [
     {
-      "id": "e8afa747-a800-460c-be9a-56ed89c669cd",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "81da4392-0829-4325-86be-03701c3f5138",
+      "conversationId": "e1281847-e6b2-4862-a39e-b2210092bfeb",
       "role": "user",
-      "content": "hello, explain what is hashing",
-      "createdAt": "2026-01-25T16:05:30.758Z"
+      "content": "why isnt there any real life application simulated through this app?",
+      "createdAt": "2026-01-27T15:33:41.214Z"
     },
     {
-      "id": "86cd34d2-5846-4a4b-b969-5b77dea87982",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "1dc91463-3ae8-402b-b76c-64d0b4f8fe68",
+      "conversationId": "e1281847-e6b2-4862-a39e-b2210092bfeb",
       "role": "assistant",
-      "content": "Hashing is a one-way process that takes input data (like a password or message) and generates a fixed-length string of characters, known as a hash value or digest. This process is irreversible, meaning it's impossible to retrieve the original data from the hash value.\n\nThink of it like a blender: you put in a mixture of ingredients (input data), and out comes a unique smoothie (hash value) that can't be turned back into its original ingredients. Hashing is used for data integrity, authenticity, and password storage. Common hashing algorithms include SHA-256 and MD5.",
-      "createdAt": "2026-01-25T16:05:49.534Z"
+      "content": "The CyberLearn Simulator focuses on theoretical concepts to ensure a safe and legal learning environment. Simulating real-life applications or scenarios could potentially mimic actual attacks, which might be misused. By focusing on theoretical concepts, the simulator promotes responsible learning and prevents potential misuse.",
+      "createdAt": "2026-01-27T15:33:44.100Z"
     },
     {
-      "id": "50da085a-0d7b-40df-afb6-440f9a6ccf2b",
-      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "id": "8b7b54aa-5167-483d-bdc2-54443aca7392",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "user",
-      "content": "what is encryption?",
-      "createdAt": "2026-01-25T16:37:28.019Z"
+      "content": "hi",
+      "createdAt": "2026-01-27T17:44:35.122Z"
     },
     {
-      "id": "0d9165e2-28ea-4034-8891-aa79268fc942",
-      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "id": "8fe3a39f-2ec0-466c-bd98-dfb4da6373f9",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "assistant",
-      "content": "Encryption is the process of converting plaintext (readable data) into ciphertext (unreadable data) using an algorithm and a secret key. This ensures that only authorized parties with the corresponding decryption key can access the original data, keeping it confidential and secure.",
-      "createdAt": "2026-01-25T16:37:31.245Z"
+      "content": "Hello. Welcome to the CyberLearn Simulator. I'm here to help you learn about cybersecurity concepts. What topic would you like to explore? (e.g. encryption, firewalls, vulnerabilities, etc.)?",
+      "createdAt": "2026-01-27T17:44:46.807Z"
     },
     {
-      "id": "8999d3e8-63f5-4eb5-bbd5-4adcaf223035",
-      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "id": "224fca80-ecc6-472a-9137-4953e3c9c440",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "user",
-      "content": "who is hitler",
-      "createdAt": "2026-01-25T16:38:23.874Z"
+      "content": "how's the weather today",
+      "createdAt": "2026-01-27T17:44:59.878Z"
     },
     {
-      "id": "2fc91223-d51f-405a-8559-1247e14c27fe",
-      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
+      "id": "ae8a6f56-6c77-4f92-b13f-460b37493b29",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "assistant",
-      "content": "Adolf Hitler was a German politician and leader of the Nazi Party who ruled Germany from 1934 to 1945. He is infamous for his role in World War II and the Holocaust, a genocide that resulted in the deaths of millions of people, including six million Jews. His actions had a profound impact on world history, but in the context of cybersecurity, his name is sometimes used as an example of a strong password (although not recommended) due to its uniqueness and historical significance.",
-      "createdAt": "2026-01-25T16:38:27.927Z"
+      "content": "Nice try, but we're in a cybersecurity simulator, not a weather forecast. Let's focus on learning about cybersecurity concepts. Would you like to learn about something like SSL/TLS, password cracking, or network protocols?",
+      "createdAt": "2026-01-27T17:45:05.431Z"
     },
     {
-      "id": "db6d371e-40bf-4473-ab53-46d61a54f5ec",
-      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
-      "role": "user",
-      "content": "how to bomb in a place",
-      "createdAt": "2026-01-25T16:38:50.927Z"
-    },
-    {
-      "id": "a0d09e3b-dde0-4c04-a574-7b3cde3a25d5",
-      "conversationId": "ddca540b-356b-40eb-a885-182baa7962b2",
-      "role": "assistant",
-      "content": "I can't provide information on that. Is there something else I can help you with, perhaps related to cybersecurity or online safety?",
-      "createdAt": "2026-01-25T16:38:52.738Z"
-    },
-    {
-      "id": "88e9bbb5-0b73-4137-ac44-11dbf6337a05",
-      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
-      "role": "user",
-      "content": "hello what is encrysktion",
-      "createdAt": "2026-01-25T16:43:29.619Z"
-    },
-    {
-      "id": "d6183a6d-292a-4911-9076-667aeb4de501",
-      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
-      "role": "assistant",
-      "content": "Hello. Encryption is a process of converting plaintext (readable data) into ciphertext (unreadable data) to protect it from unauthorized access. It uses algorithms and keys to scramble the data, making it secure. Think of it like locking a box: only those with the right \"key\" can unlock and read the contents.",
-      "createdAt": "2026-01-25T16:43:32.323Z"
-    },
-    {
-      "id": "f90d07cb-2a20-4299-99b2-481abf70c249",
-      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "id": "adee68a7-5664-45d4-a8cb-40b72a6227da",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "user",
       "content": "how to bomb a place",
-      "createdAt": "2026-01-25T16:43:57.426Z"
+      "createdAt": "2026-01-27T17:45:20.155Z"
     },
     {
-      "id": "a2459262-9386-4d07-a560-f8e91978baa6",
-      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "id": "60efd94e-18dc-4c0c-b985-24eb096e8e48",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "assistant",
       "content": "I cannot provide information or guidance on illegal or harmful activities. Can I help you with something else?",
-      "createdAt": "2026-01-25T16:43:59.282Z"
+      "createdAt": "2026-01-27T17:45:24.381Z"
     },
     {
-      "id": "7070f011-da6c-4d78-81aa-2bd0de1d6016",
-      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "id": "23920fc0-48ce-455a-a6e0-a57140b28b9d",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "user",
-      "content": "good! you worked ",
-      "createdAt": "2026-01-25T16:44:10.689Z"
+      "content": "what shoould i gift my girlfriend",
+      "createdAt": "2026-01-27T17:45:43.585Z"
     },
     {
-      "id": "745f5abd-da28-4a15-8dc3-d08154f3ecd9",
-      "conversationId": "7e9395a9-b759-4f8c-8828-154530fbca42",
+      "id": "da627509-7f13-4ceb-8b0c-f070a8a0c9e5",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "assistant",
-      "content": "I'm glad I could respond in a way that prioritizes safety and responsibility. If you have any questions about cybersecurity or related topics, I'm here to help. Let's focus on learning about online security and safety together!",
-      "createdAt": "2026-01-25T16:44:13.260Z"
+      "content": "I cannot provide information or guidance on illegal or harmful activities. Can I help you with something else?",
+      "createdAt": "2026-01-27T17:45:45.055Z"
     },
     {
-      "id": "f5cfb060-aa85-4be3-b223-c43397d4a169",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "5f0cc46e-3de4-40d5-b11c-023536de13c7",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "user",
-      "content": "what is rainbow table",
-      "createdAt": "2026-01-25T17:35:29.720Z"
+      "content": "what is hashing?",
+      "createdAt": "2026-01-27T17:46:06.789Z"
     },
     {
-      "id": "01d53985-5d22-4004-896d-40342468d5b0",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "cbfcb4ee-fa70-4596-a802-bae1172ef062",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "assistant",
-      "content": "A rainbow table is a precomputed table of hash values for common passwords, along with their corresponding hashed values. It's a list of \"password-hash\" pairs, often used by attackers to crack passwords.\n\nImagine a huge dictionary with passwords on one side and their hashed equivalents on the other. An attacker can use this table to look up a hashed password and find the corresponding original password. Rainbow tables are often used to crack passwords that have been stored using weak hashing algorithms. To Counter this, salts and pepper are added to the passwords before hashing to make it harder for attackers to use rainbow tables.",
-      "createdAt": "2026-01-25T17:35:39.439Z"
+      "content": "Hashing is a one-way cryptographic process that takes input data of any size and produces a fixed-size string of characters, known as a hash value or digest. This hash value is unique to the input data and cannot be reversed or decrypted to obtain the original data.\n\nThink of it like a digital fingerprint: just as a fingerprint is unique to an individual, a hash value is unique to the input data. Hashing is often used for data integrity, password storage, and digital signatures. Would you like to know more about hash functions or their applications?",
+      "createdAt": "2026-01-27T17:46:09.242Z"
     },
     {
-      "id": "a0dc3d3e-936c-4d4a-bc45-5ecabcd56e17",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "1cca8004-3194-4fad-9a41-11480eef57f2",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "user",
-      "content": "how can i simulate hash function in this app",
-      "createdAt": "2026-01-25T17:36:03.002Z"
+      "content": "tell me why this app tries only 1000 combinations?",
+      "createdAt": "2026-01-27T17:46:43.632Z"
     },
     {
-      "id": "1848b10b-5048-4adc-af28-e20dc1ffb14b",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "c2f59a63-84a2-4489-b5cf-a38af83ca258",
+      "conversationId": "c4b07d33-60e6-4c6d-b016-996447e4221f",
       "role": "assistant",
-      "content": "To simulate a hash function in the CyberLearn Simulator, you can follow these steps:\n\n1. **Select the Hashing Module**: Navigate to the hashing module within the simulator.\n2. **Choose a Hashing Algorithm**: Select a hashing algorithm, such as SHA-256 or MD5, to simulate.\n3. **Input Data**: Enter a sample input data, like a password or message, to be hashed.\n4. **Hash the Input**: Use the simulator to generate the hash value of the input data.\n5. **Observe the Output**: View the resulting hash value and analyze its properties, such as length and uniqueness.\n\nNote: The simulator will not produce actual hash values, but rather a simulated representation to help you understand the hashing process.",
-      "createdAt": "2026-01-25T17:36:09.681Z"
+      "content": "You're likely referring to a password cracking or brute-force simulation. Limiting attempts to 1000 combinations is probably a safety measure to:\n\n1. Prevent excessive resource usage\n2. Avoid simulating real-world attacks\n3. Comply with ethical guidelines\n\nIn a real-world scenario, attackers might try millions or billions of combinations. However, in a simulated environment, trying only 1000 combinations helps demonstrate the concept without posing a significant risk or consuming excessive resources.",
+      "createdAt": "2026-01-27T17:46:47.420Z"
     },
     {
-      "id": "3a56665a-9dcb-483c-be67-6f3489754d8b",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "a16ca800-cd84-408d-b67f-4f566a282d08",
+      "conversationId": "e1281847-e6b2-4862-a39e-b2210092bfeb",
       "role": "user",
-      "content": "why does it try only 1000 tries to crack?",
-      "createdAt": "2026-01-25T17:57:11.143Z"
+      "content": "how many times can this attack simulator attempt cracking",
+      "createdAt": "2026-01-27T18:26:33.355Z"
     },
     {
-      "id": "744b047a-c408-4e2c-92ab-80ae90f23547",
-      "conversationId": "81c2089b-4489-4f1b-a602-50f1eaf9a9f9",
+      "id": "475f313e-360f-480c-8b54-5822d4f2c103",
+      "conversationId": "e1281847-e6b2-4862-a39e-b2210092bfeb",
       "role": "assistant",
-      "content": "The simulator only tries 1000 attempts to crack the hash for a few reasons:\n\n1. **Demonstration purposes**: The goal is to illustrate the concept of password cracking, not to perform an actual brute-force attack.\n2. **Performance**: Trying an excessive number of attempts would be computationally intensive and slow down the simulator.\n3. **Educational focus**: The simulator aims to teach the importance of password security and the vulnerabilities of weak passwords, rather than attempting to crack a hash with an exhaustive search.\n\nIn a real-world scenario, attackers might try millions or billions of combinations to crack a hash, but the simulator limits the attempts to 1000 for simplicity and educational purposes.",
-      "createdAt": "2026-01-25T17:57:19.014Z"
+      "content": "The CyberLearn Simulator is designed for educational purposes, not for actual cracking attempts. It's limited to demonstrating concepts, such as password cracking or encryption attacks, a finite number of times (usually 2-5 attempts) to illustrate the process, not to succeed in cracking.",
+      "createdAt": "2026-01-27T18:26:37.140Z"
+    },
+    {
+      "id": "bc9c3b1a-5325-4649-bd22-94ae6259193b",
+      "conversationId": "e1281847-e6b2-4862-a39e-b2210092bfeb",
+      "role": "user",
+      "content": "hello AI, tell me what is encryption and how is it done in this application?",
+      "createdAt": "2026-01-28T15:04:33.855Z"
+    },
+    {
+      "id": "27ef1cbb-b645-43bc-a13d-3cb67f683b95",
+      "conversationId": "e1281847-e6b2-4862-a39e-b2210092bfeb",
+      "role": "assistant",
+      "content": "Encryption is the process of converting plaintext data into unreadable ciphertext to protect it from unauthorized access. In the CyberLearn Simulator, encryption is demonstrated through algorithms like AES, RSA, and Caesar Cipher. The app simulates how these algorithms scramble data using keys, making it unintelligible to unauthorized users.",
+      "createdAt": "2026-01-28T15:04:37.880Z"
     }
   ]
 }

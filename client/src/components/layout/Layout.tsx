@@ -28,7 +28,7 @@ export function Layout({ children }: { children: ReactNode }) {
               </SheetContent>
             </Sheet>
             <h2 className="font-display font-semibold text-lg hidden md:block">
-              Cyber Security Simulation Platform
+              CyberLearn - Learning Platform for CyberSecurity Mechanisms
             </h2>
           </div>
 

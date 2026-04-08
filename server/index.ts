@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { serveStatic } from "./static";
+import { registerRoutes } from "./routes.js";
+import { serveStatic } from "./static.js";
 import { createServer } from "http";
 
 const app = express();
@@ -82,18 +82,38 @@ app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") {
     serveStatic(app);
   } else {
-    const { setupVite } = await import("./vite");
+    const { setupVite } = await import("./vite.js");
     await setupVite(httpServer, app);
   }
 
+  // ALWAYS serve the app on the port specified in the environment variable PORT
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(port, () => {
-  log(`serving on http://localhost:${port}`);
-});
+  const server = httpServer.listen(port, () => {
+    log(`serving on http://localhost:${port}`);
+  });
 
-}
-)();
+  // Graceful shutdown
+  const shutdown = () => {
+    log('Shutting down server...');
+    server.close(async () => {
+      log('HTTP server closed');
+      const { db } = await import("./db.js");
+      db.close();
+      log('Database connection closed');
+      process.exit(0);
+    });
+
+    // Force shutdown if it takes too long
+    setTimeout(() => {
+      console.error('Could not close connections in time, forcefully shutting down');
+      process.exit(1);
+    }, 10000);
+  };
+
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
+})();

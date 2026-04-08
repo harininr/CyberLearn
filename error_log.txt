@@ -1,0 +1,2711 @@
+﻿node : 2026-01-29T16:17:26.090Z 
+vite:config config file loaded in 55.12ms
+At line:1 char:1
++ node dist/server/index.js 2>&1 | 
+Out-File -FilePath "error_log.txt" - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (2026-01-29T16:1...aded in 55.12ms  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+2026-01-29T16:17:26.098Z vite:env loading 
+env files: [
+  'D:/CyberEase/client/.env',
+  'D:/CyberEase/client/.env.local',
+  'D:/CyberEase/client/.env.development',
+  'D:/CyberEase/client/.env.development.lo
+cal'
+]
+2026-01-29T16:17:26.098Z vite:env env 
+files loaded in 2.96ms
+2026-01-29T16:17:26.100Z vite:env using 
+resolved env: {}
+2026-01-29T16:17:26.119Z vite:config 
+using resolved config: {
+  plugins: [
+    'vite:optimized-deps',
+    'vite:watch-package-data',
+    'vite:pre-alias',
+    'alias',
+    'vite:react-babel',
+    'vite:react-refresh',
+    'vite:modulepreload-polyfill',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'vite:react-virtual-preamble',
+    'vite:wasm-fallback',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'vite:client-inject',
+    'vite:css-analysis',
+    'vite:import-analysis'
+  ],
+  resolve: {
+    externalConditions: [ 'node', 
+'module-sync' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: false,
+    alias: [
+      { find: '@', replacement: 
+'D:\\CyberEase\\client\\src' },
+      { find: '@shared', replacement: 
+'D:\\CyberEase\\shared' },
+      {
+        find: '@assets',
+        replacement: 
+'D:\\CyberEase\\attached_assets'
+      },
+      {
+        find: /^\/?@vite\/env/,
+        replacement: '/@fs/D:/CyberEase/no
+de_modules/vite/dist/client/env.mjs'
+      },
+      {
+        find: /^\/?@vite\/client/,
+        replacement: '/@fs/D:/CyberEase/no
+de_modules/vite/dist/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'browser', 'module', 
+'jsnext:main', 'jsnext' ],
+    conditions: [ 'module', 'browser', 
+'development|production' ],
+    builtins: []
+  },
+  root: 'D:/CyberEase/client',
+  build: {
+    target: [ 'chrome107', 'edge107', 
+'firefox104', 'safari16' ],
+    polyfillModulePreload: true,
+    modulePreload: { polyfill: true },
+    outDir: 'D:\\CyberEase\\dist\\public',
+    assetsDir: 'assets',
+    assetsInlineLimit: 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: { onwarn: [Function: 
+onwarn] },
+    commonjsOptions: { include: [ 
+/node_modules/ ], extensions: [ '.js', 
+'.cjs' ] },
+    dynamicImportVarsOptions: { 
+warnOnError: true, exclude: [ 
+/node_modules/ ] },
+    write: true,
+    emptyOutDir: true,
+    copyPublicDir: true,
+    license: false,
+    manifest: false,
+    lib: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    cssCodeSplit: true,
+    minify: 'esbuild',
+    ssr: false,
+    emitAssets: false,
+    createEnvironment: [Function: 
+createEnvironment],
+    cssTarget: [ 'chrome107', 'edge107', 
+'firefox104', 'safari16' ],
+    cssMinify: true
+  },
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?
+localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFiles: [], ssrFiles: 
+[] },
+    middlewareMode: true,
+    fs: { strict: true, deny: [ '**/.*' 
+], allow: [ 'D:/CyberEase' ] },
+    preTransformRequests: true,
+    perEnvironmentStartEndDuringDev: 
+false,
+    perEnvironmentWatchChangeDuringDev: 
+false,
+    sourcemapIgnoreList: [Function: 
+isInNodeModules],
+    hmr: {
+      server: Server {
+        maxHeaderSize: undefined,
+        insecureHTTPParser: undefined,
+        requestTimeout: 300000,
+        headersTimeout: 60000,
+        keepAliveTimeout: 5000,
+        connectionsCheckingInterval: 
+30000,
+        requireHostHeader: true,
+        joinDuplicateHeaders: undefined,
+        rejectNonStandardBodyWrites: 
+false,
+        _events: [Object: null prototype] 
+{
+          request: <ref *1> [Function: 
+app] {
+            _events: [Object: null 
+prototype] { mount: [Function: onmount] },
+            _eventsCount: 1,
+            _maxListeners: undefined,
+            setMaxListeners: [Function: 
+setMaxListeners],
+            getMaxListeners: [Function: 
+getMaxListeners],
+            emit: [Function: emit],
+            addListener: [Function: 
+addListener],
+            on: [Function: addListener],
+            prependListener: [Function: 
+prependListener],
+            once: [Function: once],
+            prependOnceListener: 
+[Function: prependOnceListener],
+            removeListener: [Function: 
+removeListener],
+            off: [Function: 
+removeListener],
+            removeAllListeners: 
+[Function: removeAllListeners],
+            listeners: [Function: 
+listeners],
+            rawListeners: [Function: 
+rawListeners],
+            listenerCount: [Function: 
+listenerCount],
+            eventNames: [Function: 
+eventNames],
+            init: [Function: init],
+            defaultConfiguration: 
+[Function: defaultConfiguration],
+            handle: [Function: handle],
+            use: [Function: use],
+            route: [Function: route],
+            engine: [Function: engine],
+            param: [Function: param],
+            set: [Function: set],
+            path: [Function: path],
+            enabled: [Function: enabled],
+            disabled: [Function: 
+disabled],
+            enable: [Function: enable],
+            disable: [Function: disable],
+            acl: [Function (anonymous)],
+            bind: [Function (anonymous)],
+            checkout: [Function 
+(anonymous)],
+            connect: [Function 
+(anonymous)],
+            copy: [Function (anonymous)],
+            delete: [Function 
+(anonymous)],
+            get: [Function (anonymous)],
+            head: [Function (anonymous)],
+            link: [Function (anonymous)],
+            lock: [Function (anonymous)],
+            'm-search': [Function 
+(anonymous)],
+            merge: [Function (anonymous)],
+            mkactivity: [Function 
+(anonymous)],
+            mkcalendar: [Function 
+(anonymous)],
+            mkcol: [Function (anonymous)],
+            move: [Function (anonymous)],
+            notify: [Function 
+(anonymous)],
+            options: [Function 
+(anonymous)],
+            patch: [Function (anonymous)],
+            post: [Function (anonymous)],
+            propfind: [Function 
+(anonymous)],
+            proppatch: [Function 
+(anonymous)],
+            purge: [Function (anonymous)],
+            put: [Function (anonymous)],
+            query: [Function (anonymous)],
+            rebind: [Function 
+(anonymous)],
+            report: [Function 
+(anonymous)],
+            search: [Function 
+(anonymous)],
+            source: [Function 
+(anonymous)],
+            subscribe: [Function 
+(anonymous)],
+            trace: [Function (anonymous)],
+            unbind: [Function 
+(anonymous)],
+            unlink: [Function 
+(anonymous)],
+            unlock: [Function 
+(anonymous)],
+            unsubscribe: [Function 
+(anonymous)],
+            all: [Function: all],
+            render: [Function: render],
+            listen: [Function: listen],
+            request: IncomingMessage { 
+app: [Circular *1] },
+            response: ServerResponse { 
+app: [Circular *1] },
+            cache: [Object: null 
+prototype] {},
+            engines: [Object: null 
+prototype] {},
+            settings: [Object: null 
+prototype] {
+              'x-powered-by': true,
+              etag: 'weak',
+              'etag fn': [Function: 
+generateETag],
+              env: 'development',
+              'query parser': 'simple',
+              'query parser fn': 
+[Function: parse],
+              'subdomain offset': 2,
+              'trust proxy': false,
+              'trust proxy fn': 
+[Function: trustNone],
+              view: [Function: View],
+              views: 
+'D:\\CyberEase\\views',
+              'jsonp callback name': 
+'callback'
+            },
+            locals: [Object: null 
+prototype] {
+              settings: [Object: null 
+prototype] {
+                'x-powered-by': true,
+                etag: 'weak',
+                'etag fn': [Function: 
+generateETag],
+                env: 'development',
+                'query parser': 'simple',
+                'query parser fn': 
+[Function: parse],
+                'subdomain offset': 2,
+                'trust proxy': false,
+                'trust proxy fn': 
+[Function: trustNone],
+                view: [Function: View],
+                views: 
+'D:\\CyberEase\\views',
+                'jsonp callback name': 
+'callback'
+              }
+            },
+            mountpath: '/',
+            router: [Getter]
+          },
+          connection: [Function: 
+connectionListener],
+          listening: [Function: 
+setupConnectionsTracking]
+        },
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        _connections: 0,
+        _handle: null,
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        _listeningId: 1,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        noDelay: true,
+        keepAlive: false,
+        keepAliveInitialDelay: 0,
+        highWaterMark: 16384,
+        httpAllowHalfOpen: false,
+        timeout: 0,
+        maxHeadersCount: null,
+        maxRequestsPerSocket: 0,
+        [Symbol(IncomingMessage)]: 
+[Function: IncomingMessage],
+        [Symbol(ServerResponse)]: 
+[Function: ServerResponse],
+        [Symbol(shapeMode)]: false,
+        [Symbol(kCapture)]: false,
+        [Symbol(async_id_symbol)]: -1,
+        [Symbol(kUniqueHeaders)]: null
+      },
+      path: '/vite-hmr'
+    }
+  },
+  appType: 'custom',
+  customLogger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: 
+hasErrorLogged]
+  },
+  esbuild: {
+    jsxDev: true,
+    charset: 'utf8',
+    legalComments: 'none',
+    jsx: 'automatic',
+    jsxImportSource: undefined
+  },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime'
+    ],
+    exclude: [],
+    needsInterop: [],
+    extensions: [],
+    disabled: undefined,
+    holdUntilCrawlEnd: true,
+    force: false,
+    ignoreOutdatedRequests: false,
+    noDiscovery: false,
+    esbuildOptions: { preserveSymlinks: 
+false, jsx: 'automatic' }
+  },
+  environments: {
+    client: {
+      define: undefined,
+      resolve: {
+        externalConditions: [ 'node', 
+'module-sync' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: '@', replacement: 
+'D:\\CyberEase\\client\\src' },
+          { find: '@shared', replacement: 
+'D:\\CyberEase\\shared' },
+          {
+            find: '@assets',
+            replacement: 
+'D:\\CyberEase\\attached_assets'
+          },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/D:/CyberEas
+e/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/D:/CyberEas
+e/node_modules/vite/dist/client/client.mjs
+'
+          }
+        ],
+        mainFields: [ 'browser', 
+'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 
+'browser', 'development|production' ],
+        builtins: []
+      },
+      keepProcessEnv: false,
+      consumer: 'client',
+      optimizeDeps: {
+        include: [
+          'react',
+          'react-dom',
+          'react/jsx-dev-runtime',
+          'react/jsx-runtime'
+        ],
+        exclude: [],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        ignoreOutdatedRequests: false,
+        noDiscovery: false,
+        esbuildOptions: { 
+preserveSymlinks: false, jsx: 'automatic' 
+}
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: 
+isInNodeModules],
+        preTransformRequests: true,
+        createEnvironment: [Function: 
+defaultCreateClientDevEnvironment],
+        recoverable: true,
+        moduleRunnerTransform: false
+      },
+      build: {
+        target: [ 'chrome107', 'edge107', 
+'firefox104', 'safari16' ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 
+'D:\\CyberEase\\dist\\public',
+        assetsDir: 'assets',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: { onwarn: 
+[Function: onwarn] },
+        commonjsOptions: { include: [ 
+/node_modules/ ], extensions: [ '.js', 
+'.cjs' ] },
+        dynamicImportVarsOptions: { 
+warnOnError: true, exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: true,
+        copyPublicDir: true,
+        license: false,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: 'esbuild',
+        ssr: false,
+        emitAssets: true,
+        createEnvironment: [Function: 
+createEnvironment],
+        cssTarget: [ 'chrome107', 
+'edge107', 'firefox104', 'safari16' ],
+        cssMinify: true
+      },
+      plugins: [
+        {
+          name: 'vite:optimized-deps',
+          applyToEnvironment: [Function: 
+applyToEnvironment],
+          resolveId: [Function: 
+resolveId],
+          load: [AsyncFunction: load]
+        },
+        {
+          name: 'vite:watch-package-data',
+          buildStart: [Function: 
+buildStart],
+          buildEnd: [Function: buildEnd],
+          watchChange: [Function: 
+watchChange]
+        },
+        {
+          name: 'vite:pre-alias',
+          applyToEnvironment: [Function: 
+applyToEnvironment],
+          resolveId: [AsyncFunction: 
+resolveId]
+        },
+        {
+          name: 'alias',
+          buildStart: [AsyncFunction: 
+buildStart],
+          resolveId: [Function: resolveId]
+        },
+        {
+          name: 'vite:react-babel',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: 
+configResolved],
+          options: [Function: options],
+          transform: {
+            filter: {
+              id: {
+                include: 
+/\.[tj]sx?(?:\?.*)?$/,
+                exclude: 
+/\/node_modules\//
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:react-refresh',
+          enforce: 'pre',
+          config: [Function: config],
+          resolveId: {
+            filter: { id: 
+/^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          transformIndexHtml: [Function: 
+transformIndexHtml]
+        },
+        {
+          name: 
+'vite:modulepreload-polyfill',
+          resolveId: {
+            filter: { id: 
+/^vite\/modulepreload\-polyfill$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^ vite\/modulepreload\-polyfill\.js$/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:resolve',
+          resolveId: {
+            filter: { id: { exclude: 
+/^(?:\0|\/?virtual:)/ } },
+            handler: [AsyncFunction: 
+handler]
+          },
+          load: {
+            filter: {
+              id: [
+                
+/^__vite\-browser\-external/,
+                
+/^__vite\-optional\-peer\-dep/
+              ]
+            },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:html-inline-proxy',
+          resolveId: {
+            filter: { id: 
+/[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:css',
+          buildStart: [Function: 
+buildStart],
+          buildEnd: [Function: buildEnd],
+          load: {
+            filter: {
+              id: /\.(css|less|sass|scss|s
+tyl|stylus|pcss|postcss|sss)(?:$|\?)/
+            },
+            handler: [AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass
+|scss|styl|stylus|pcss|postcss|sss)(?:$|\?
+)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  
+/[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:esbuild',
+          configureServer: [Function: 
+configureServer],
+          transform: [AsyncFunction: 
+transform]
+        },
+        {
+          name: 'vite:json',
+          transform: {
+            filter: {
+              id: {
+                include: /\.json(?:$|\?)(?
+!commonjs-(?:proxy|external))/,
+                exclude: 
+/[?&](?:worker|sharedworker|raw|url)\b/
+              }
+            },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:wasm-helper',
+          resolveId: {
+            filter: { id: 
+/^ vite\/wasm\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: {
+              id: [
+                
+/^ vite\/wasm\-helper\.js$/,
+                /(?<![?#].*)\.wasm\?init/
+              ]
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:worker',
+          buildStart: [Function: 
+buildStart],
+          load: {
+            filter: { id: 
+/(?:\?|&)(worker|sharedworker)(?:&|$)/ },
+            handler: [AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: { id: 
+/(?:\?|&)worker_file&type=(\w+)(?:&|$)/ },
+            handler: [AsyncFunction: 
+handler]
+          },
+          renderChunk: [Function: 
+renderChunk],
+          generateBundle: [Function: 
+generateBundle],
+          watchChange: [Function: 
+watchChange]
+        },
+        {
+          name: 'vite:asset',
+          
+perEnvironmentStartEndDuringDev: true,
+          buildStart: [Function: 
+buildStart],
+          resolveId: { handler: 
+[Function: handler] },
+          load: {
+            filter: { id: { exclude: 
+/^\0/ } },
+            handler: [AsyncFunction: 
+handler]
+          },
+          renderChunk: [Function: 
+renderChunk],
+          generateBundle: [Function: 
+generateBundle]
+        },
+        {
+          name: 
+'vite:react-virtual-preamble',
+          resolveId: {
+            order: 'pre',
+            filter: { id: 
+/^@vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^ @vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:wasm-fallback',
+          load: { filter: { id: /\.wasm$/ 
+}, handler: [Function: handler] }
+        },
+        {
+          name: 'vite:define',
+          transform: { handler: 
+[AsyncFunction: handler] }
+        },
+        {
+          name: 'vite:css-post',
+          renderStart: [Function: 
+renderStart],
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass
+|scss|styl|stylus|pcss|postcss|sss)(?:$|\?
+)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  
+/[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          },
+          renderChunk: [AsyncFunction: 
+renderChunk],
+          augmentChunkHash: [Function: 
+augmentChunkHash],
+          generateBundle: [AsyncFunction: 
+generateBundle]
+        },
+        {
+          name: 
+'vite:worker-import-meta-url',
+          applyToEnvironment: [Function: 
+applyToEnvironment],
+          transform: {
+            filter: {
+              code: /new\s+(?:Worker|Share
+dWorker)\s*\(\s*new\s+URL.+?import\.meta\.
+url/s
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:asset-import-meta-url',
+          applyToEnvironment: [Function: 
+applyToEnvironment],
+          transform: {
+            filter: {
+              id: {
+                exclude: [
+                  
+/^ vite\/preload\-helper\.js$/,
+                  /^D:\\CyberEase\\node_mo
+dules\\vite\\dist\\client\\client\.mjs$/
+                ]
+              },
+              code: 
+/new\s+URL.+import\.meta\.url/s
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:dynamic-import-vars',
+          resolveId: {
+            filter: { id: 
+/^ vite\/dynamic\-import\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^ vite\/dynamic\-import\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                exclude: /^D:\\CyberEase\\
+node_modules\\vite\\dist\\client\\client\.
+mjs$/
+              },
+              code: /\bimport\s*[(/]/
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:import-glob',
+          buildStart: [Function: 
+buildStart],
+          transform: {
+            filter: { code: 
+'import.meta.glob' },
+            handler: [AsyncFunction: 
+handler]
+          },
+          hotUpdate: [Function: hotUpdate]
+        },
+        {
+          name: 'vite:client-inject',
+          buildStart: [AsyncFunction: 
+buildStart],
+          transform: [AsyncFunction: 
+transform]
+        },
+        {
+          name: 'vite:css-analysis',
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass
+|scss|styl|stylus|pcss|postcss|sss)(?:$|\?
+)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  
+/[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:import-analysis',
+          transform: [AsyncFunction: 
+transform]
+        }
+      ]
+    },
+    ssr: {
+      define: undefined,
+      resolve: {
+        externalConditions: [ 'node', 
+'module-sync' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: '@', replacement: 
+'D:\\CyberEase\\client\\src' },
+          { find: '@shared', replacement: 
+'D:\\CyberEase\\shared' },
+          {
+            find: '@assets',
+            replacement: 
+'D:\\CyberEase\\attached_assets'
+          },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/D:/CyberEas
+e/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/D:/CyberEas
+e/node_modules/vite/dist/client/client.mjs
+'
+          }
+        ],
+        mainFields: [ 'module', 
+'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'node', 
+'development|production' ],
+        builtins: [
+          '_http_agent',         
+'_http_client',        '_http_common',
+          '_http_incoming',      
+'_http_outgoing',      '_http_server',
+          '_stream_duplex',      
+'_stream_passthrough', '_stream_readable',
+          '_stream_transform',   
+'_stream_wrap',        '_stream_writable',
+          '_tls_common',         
+'_tls_wrap',           'assert',
+          'assert/strict',       
+'async_hooks',         'buffer',
+          'child_process',       
+'cluster',             'console',
+          'constants',           
+'crypto',              'dgram',
+          'diagnostics_channel', 'dns',   
+              'dns/promises',
+          'domain',              
+'events',              'fs',
+          'fs/promises',         'http',  
+              'http2',
+          'https',               
+'inspector',           
+'inspector/promises',
+          'module',              'net',   
+              'os',
+          'path',                
+'path/posix',          'path/win32',
+          'perf_hooks',          
+'process',             'punycode',
+          'querystring',         
+'readline',            
+'readline/promises',
+          'repl',                
+'stream',              'stream/consumers',
+          'stream/promises',     
+'stream/web',          'string_decoder',
+          'sys',                 
+'timers',              'timers/promises',
+          'tls',                 
+'trace_events',        'tty',
+          'url',                 'util',  
+              'util/types',
+          'v8',                  'vm',    
+              'wasi',
+          'worker_threads',      'zlib',  
+              /^node:/,
+          /^bun:/
+        ]
+      },
+      keepProcessEnv: true,
+      consumer: 'server',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        ignoreOutdatedRequests: false,
+        noDiscovery: true,
+        esbuildOptions: { 
+preserveSymlinks: false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: 
+isInNodeModules],
+        preTransformRequests: false,
+        createEnvironment: [Function: 
+defaultCreateDevEnvironment],
+        recoverable: false,
+        moduleRunnerTransform: true
+      },
+      build: {
+        target: [ 'chrome107', 'edge107', 
+'firefox104', 'safari16' ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 
+'D:\\CyberEase\\dist\\public',
+        assetsDir: 'assets',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: { onwarn: 
+[Function: onwarn] },
+        commonjsOptions: { include: [ 
+/node_modules/ ], extensions: [ '.js', 
+'.cjs' ] },
+        dynamicImportVarsOptions: { 
+warnOnError: true, exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: true,
+        copyPublicDir: true,
+        license: false,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: false,
+        ssr: true,
+        emitAssets: false,
+        createEnvironment: [Function: 
+createEnvironment],
+        cssTarget: [ 'chrome107', 
+'edge107', 'firefox104', 'safari16' ],
+        cssMinify: 'esbuild'
+      },
+      plugins: [
+        {
+          name: 'vite:watch-package-data',
+          buildStart: [Function: 
+buildStart],
+          buildEnd: [Function: buildEnd],
+          watchChange: [Function: 
+watchChange]
+        },
+        {
+          name: 'alias',
+          buildStart: [AsyncFunction: 
+buildStart],
+          resolveId: [Function: resolveId]
+        },
+        {
+          name: 'vite:react-babel',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: 
+configResolved],
+          options: [Function: options],
+          transform: {
+            filter: {
+              id: {
+                include: 
+/\.[tj]sx?(?:\?.*)?$/,
+                exclude: 
+/\/node_modules\//
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:react-refresh',
+          enforce: 'pre',
+          config: [Function: config],
+          resolveId: {
+            filter: { id: 
+/^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          transformIndexHtml: [Function: 
+transformIndexHtml]
+        },
+        {
+          name: 
+'vite:modulepreload-polyfill',
+          resolveId: {
+            filter: { id: 
+/^vite\/modulepreload\-polyfill$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^ vite\/modulepreload\-polyfill\.js$/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:resolve',
+          resolveId: {
+            filter: { id: { exclude: 
+/^(?:\0|\/?virtual:)/ } },
+            handler: [AsyncFunction: 
+handler]
+          },
+          load: {
+            filter: {
+              id: [
+                
+/^__vite\-browser\-external/,
+                
+/^__vite\-optional\-peer\-dep/
+              ]
+            },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:html-inline-proxy',
+          resolveId: {
+            filter: { id: 
+/[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:css',
+          buildStart: [Function: 
+buildStart],
+          buildEnd: [Function: buildEnd],
+          load: {
+            filter: {
+              id: /\.(css|less|sass|scss|s
+tyl|stylus|pcss|postcss|sss)(?:$|\?)/
+            },
+            handler: [AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass
+|scss|styl|stylus|pcss|postcss|sss)(?:$|\?
+)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  
+/[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:esbuild',
+          configureServer: [Function: 
+configureServer],
+          transform: [AsyncFunction: 
+transform]
+        },
+        {
+          name: 'vite:json',
+          transform: {
+            filter: {
+              id: {
+                include: /\.json(?:$|\?)(?
+!commonjs-(?:proxy|external))/,
+                exclude: 
+/[?&](?:worker|sharedworker|raw|url)\b/
+              }
+            },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:wasm-helper',
+          resolveId: {
+            filter: { id: 
+/^ vite\/wasm\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: {
+              id: [
+                
+/^ vite\/wasm\-helper\.js$/,
+                /(?<![?#].*)\.wasm\?init/
+              ]
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:worker',
+          buildStart: [Function: 
+buildStart],
+          load: {
+            filter: { id: 
+/(?:\?|&)(worker|sharedworker)(?:&|$)/ },
+            handler: [AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: { id: 
+/(?:\?|&)worker_file&type=(\w+)(?:&|$)/ },
+            handler: [AsyncFunction: 
+handler]
+          },
+          renderChunk: [Function: 
+renderChunk],
+          generateBundle: [Function: 
+generateBundle],
+          watchChange: [Function: 
+watchChange]
+        },
+        {
+          name: 'vite:asset',
+          
+perEnvironmentStartEndDuringDev: true,
+          buildStart: [Function: 
+buildStart],
+          resolveId: { handler: 
+[Function: handler] },
+          load: {
+            filter: { id: { exclude: 
+/^\0/ } },
+            handler: [AsyncFunction: 
+handler]
+          },
+          renderChunk: [Function: 
+renderChunk],
+          generateBundle: [Function: 
+generateBundle]
+        },
+        {
+          name: 
+'vite:react-virtual-preamble',
+          resolveId: {
+            order: 'pre',
+            filter: { id: 
+/^@vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^ @vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:wasm-fallback',
+          load: { filter: { id: /\.wasm$/ 
+}, handler: [Function: handler] }
+        },
+        {
+          name: 'vite:define',
+          transform: { handler: 
+[AsyncFunction: handler] }
+        },
+        {
+          name: 'vite:css-post',
+          renderStart: [Function: 
+renderStart],
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass
+|scss|styl|stylus|pcss|postcss|sss)(?:$|\?
+)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  
+/[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          },
+          renderChunk: [AsyncFunction: 
+renderChunk],
+          augmentChunkHash: [Function: 
+augmentChunkHash],
+          generateBundle: [AsyncFunction: 
+generateBundle]
+        },
+        {
+          name: 
+'vite:dynamic-import-vars',
+          resolveId: {
+            filter: { id: 
+/^ vite\/dynamic\-import\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: 
+/^ vite\/dynamic\-import\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                exclude: /^D:\\CyberEase\\
+node_modules\\vite\\dist\\client\\client\.
+mjs$/
+              },
+              code: /\bimport\s*[(/]/
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:import-glob',
+          buildStart: [Function: 
+buildStart],
+          transform: {
+            filter: { code: 
+'import.meta.glob' },
+            handler: [AsyncFunction: 
+handler]
+          },
+          hotUpdate: [Function: hotUpdate]
+        },
+        {
+          name: 'vite:client-inject',
+          buildStart: [AsyncFunction: 
+buildStart],
+          transform: [AsyncFunction: 
+transform]
+        },
+        {
+          name: 'vite:css-analysis',
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass
+|scss|styl|stylus|pcss|postcss|sss)(?:$|\?
+)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  
+/[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:import-analysis',
+          transform: [AsyncFunction: 
+transform]
+        }
+      ]
+    }
+  },
+  configFile: 
+'D:/CyberEase/vite.config.ts',
+  configFileDependencies: [ 
+'D:/CyberEase/vite.config.ts' ],
+  inlineConfig: {
+    server: {
+      middlewareMode: true,
+      hmr: {
+        server: Server {
+          maxHeaderSize: undefined,
+          insecureHTTPParser: undefined,
+          requestTimeout: 300000,
+          headersTimeout: 60000,
+          keepAliveTimeout: 5000,
+          connectionsCheckingInterval: 
+30000,
+          requireHostHeader: true,
+          joinDuplicateHeaders: undefined,
+          rejectNonStandardBodyWrites: 
+false,
+          _events: [Object: null 
+prototype] {
+            request: <ref *1> [Function: 
+app] {
+              _events: [Object: null 
+prototype] { mount: [Function: onmount] },
+              _eventsCount: 1,
+              _maxListeners: undefined,
+              setMaxListeners: [Function: 
+setMaxListeners],
+              getMaxListeners: [Function: 
+getMaxListeners],
+              emit: [Function: emit],
+              addListener: [Function: 
+addListener],
+              on: [Function: addListener],
+              prependListener: [Function: 
+prependListener],
+              once: [Function: once],
+              prependOnceListener: 
+[Function: prependOnceListener],
+              removeListener: [Function: 
+removeListener],
+              off: [Function: 
+removeListener],
+              removeAllListeners: 
+[Function: removeAllListeners],
+              listeners: [Function: 
+listeners],
+              rawListeners: [Function: 
+rawListeners],
+              listenerCount: [Function: 
+listenerCount],
+              eventNames: [Function: 
+eventNames],
+              init: [Function: init],
+              defaultConfiguration: 
+[Function: defaultConfiguration],
+              handle: [Function: handle],
+              use: [Function: use],
+              route: [Function: route],
+              engine: [Function: engine],
+              param: [Function: param],
+              set: [Function: set],
+              path: [Function: path],
+              enabled: [Function: 
+enabled],
+              disabled: [Function: 
+disabled],
+              enable: [Function: enable],
+              disable: [Function: 
+disable],
+              acl: [Function (anonymous)],
+              bind: [Function 
+(anonymous)],
+              checkout: [Function 
+(anonymous)],
+              connect: [Function 
+(anonymous)],
+              copy: [Function 
+(anonymous)],
+              delete: [Function 
+(anonymous)],
+              get: [Function (anonymous)],
+              head: [Function 
+(anonymous)],
+              link: [Function 
+(anonymous)],
+              lock: [Function 
+(anonymous)],
+              'm-search': [Function 
+(anonymous)],
+              merge: [Function 
+(anonymous)],
+              mkactivity: [Function 
+(anonymous)],
+              mkcalendar: [Function 
+(anonymous)],
+              mkcol: [Function 
+(anonymous)],
+              move: [Function 
+(anonymous)],
+              notify: [Function 
+(anonymous)],
+              options: [Function 
+(anonymous)],
+              patch: [Function 
+(anonymous)],
+              post: [Function 
+(anonymous)],
+              propfind: [Function 
+(anonymous)],
+              proppatch: [Function 
+(anonymous)],
+              purge: [Function 
+(anonymous)],
+              put: [Function (anonymous)],
+              query: [Function 
+(anonymous)],
+              rebind: [Function 
+(anonymous)],
+              report: [Function 
+(anonymous)],
+              search: [Function 
+(anonymous)],
+              source: [Function 
+(anonymous)],
+              subscribe: [Function 
+(anonymous)],
+              trace: [Function 
+(anonymous)],
+              unbind: [Function 
+(anonymous)],
+              unlink: [Function 
+(anonymous)],
+              unlock: [Function 
+(anonymous)],
+              unsubscribe: [Function 
+(anonymous)],
+              all: [Function: all],
+              render: [Function: render],
+              listen: [Function: listen],
+              request: IncomingMessage { 
+app: [Circular *1] },
+              response: ServerResponse { 
+app: [Circular *1] },
+              cache: [Object: null 
+prototype] {},
+              engines: [Object: null 
+prototype] {},
+              settings: [Object: null 
+prototype] {
+                'x-powered-by': true,
+                etag: 'weak',
+                'etag fn': [Function: 
+generateETag],
+                env: 'development',
+                'query parser': 'simple',
+                'query parser fn': 
+[Function: parse],
+                'subdomain offset': 2,
+                'trust proxy': false,
+                'trust proxy fn': 
+[Function: trustNone],
+                view: [Function: View],
+                views: 
+'D:\\CyberEase\\views',
+                'jsonp callback name': 
+'callback'
+              },
+              locals: [Object: null 
+prototype] {
+                settings: [Object: null 
+prototype] {
+                  'x-powered-by': true,
+                  etag: 'weak',
+                  'etag fn': [Function: 
+generateETag],
+                  env: 'development',
+                  'query parser': 
+'simple',
+                  'query parser fn': 
+[Function: parse],
+                  'subdomain offset': 2,
+                  'trust proxy': false,
+                  'trust proxy fn': 
+[Function: trustNone],
+                  view: [Function: View],
+                  views: 
+'D:\\CyberEase\\views',
+                  'jsonp callback name': 
+'callback'
+                }
+              },
+              mountpath: '/',
+              router: [Getter]
+            },
+            connection: [Function: 
+connectionListener],
+            listening: [Function: 
+setupConnectionsTracking]
+          },
+          _eventsCount: 3,
+          _maxListeners: undefined,
+          _connections: 0,
+          _handle: null,
+          _usingWorkers: false,
+          _workers: [],
+          _unref: false,
+          _listeningId: 1,
+          allowHalfOpen: true,
+          pauseOnConnect: false,
+          noDelay: true,
+          keepAlive: false,
+          keepAliveInitialDelay: 0,
+          highWaterMark: 16384,
+          httpAllowHalfOpen: false,
+          timeout: 0,
+          maxHeadersCount: null,
+          maxRequestsPerSocket: 0,
+          [Symbol(IncomingMessage)]: 
+[Function: IncomingMessage],
+          [Symbol(ServerResponse)]: 
+[Function: ServerResponse],
+          [Symbol(shapeMode)]: false,
+          [Symbol(kCapture)]: false,
+          [Symbol(async_id_symbol)]: -1,
+          [Symbol(kUniqueHeaders)]: null
+        },
+        path: '/vite-hmr'
+      }
+    },
+    appType: 'custom',
+    customLogger: {
+      hasWarned: false,
+      info: [Function: info],
+      warn: [Function: warn],
+      warnOnce: [Function: warnOnce],
+      error: [Function: error],
+      clearScreen: [Function: 
+clearScreen],
+      hasErrorLogged: [Function: 
+hasErrorLogged]
+    }
+  },
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  publicDir: 'D:/CyberEase/client/public',
+  cacheDir: 
+'D:/CyberEase/node_modules/.vite',
+  command: 'serve',
+  mode: 'development',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: false,
+  css: {
+    transformer: 'postcss',
+    preprocessorMaxWorkers: true,
+    devSourcemap: false
+  },
+  json: { namedExports: true, stringify: 
+'auto' },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?
+localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'D:/CyberEase/client',
+  env: { BASE_URL: '/', MODE: 
+'development', DEV: true, PROD: false },
+  assetsInclude: [Function: 
+assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: 
+hasErrorLogged]
+  },
+  packageCache: Map(2) {
+    'fnpd_D:/CyberEase' => {
+      dir: 'D:/CyberEase',
+      data: {
+        name: 'rest-express',
+        version: '1.0.0',
+        type: 'module',
+        scripts: {
+          build: 'tsc -p 
+tsconfig.server.json',
+          dev: 'npm run build && node 
+dist/server/index.js',
+          start: 'node dist/index.js'
+        },
+        dependencies: {
+          '@hookform/resolvers': '^5.2.2',
+          '@radix-ui/react-accordion': 
+'^1.2.12',
+          '@radix-ui/react-alert-dialog': 
+'^1.1.15',
+          '@radix-ui/react-aspect-ratio': 
+'^1.1.8',
+          '@radix-ui/react-avatar': 
+'^1.1.11',
+          '@radix-ui/react-checkbox': 
+'^1.3.3',
+          '@radix-ui/react-collapsible': 
+'^1.1.12',
+          '@radix-ui/react-dialog': 
+'^1.1.15',
+          
+'@radix-ui/react-dropdown-menu': 
+'^2.1.16',
+          '@radix-ui/react-hover-card': 
+'^1.1.15',
+          '@radix-ui/react-label': 
+'^2.1.8',
+          '@radix-ui/react-menubar': 
+'^1.1.16',
+          
+'@radix-ui/react-navigation-menu': 
+'^1.2.14',
+          '@radix-ui/react-popover': 
+'^1.1.15',
+          '@radix-ui/react-progress': 
+'^1.1.8',
+          '@radix-ui/react-radio-group': 
+'^1.3.8',
+          '@radix-ui/react-scroll-area': 
+'^1.2.10',
+          '@radix-ui/react-select': 
+'^2.2.6',
+          '@radix-ui/react-separator': 
+'^1.1.8',
+          '@radix-ui/react-slider': 
+'^1.3.6',
+          '@radix-ui/react-slot': 
+'^1.2.4',
+          '@radix-ui/react-switch': 
+'^1.2.6',
+          '@radix-ui/react-tabs': 
+'^1.1.13',
+          '@radix-ui/react-toast': 
+'^1.2.15',
+          '@radix-ui/react-toggle': 
+'^1.1.10',
+          '@radix-ui/react-toggle-group': 
+'^1.1.11',
+          '@radix-ui/react-tooltip': 
+'^1.2.8',
+          '@tanstack/react-query': 
+'^5.90.20',
+          '@types/react': '^19.2.10',
+          '@types/react-dom': '^19.2.3',
+          '@vitejs/plugin-react': 
+'^5.1.2',
+          autoprefixer: '^10.4.23',
+          'class-variance-authority': 
+'^0.7.1',
+          clsx: '^2.1.1',
+          cmdk: '^1.1.1',
+          dotenv: '^17.2.3',
+          'drizzle-orm': '^0.45.1',
+          express: '^5.0.1',
+          'express-session': '^1.18.1',
+          'input-otp': '^1.4.2',
+          'lucide-react': '^0.563.0',
+          nanoid: '^5.1.6',
+          openai: '^6.17.0',
+          passport: '^0.7.0',
+          'passport-local': '^1.0.0',
+          pg: '^8.16.3',
+          postcss: '^8.5.6',
+          react: '^19.2.4',
+          'react-day-picker': '^9.13.0',
+          'react-dom': '^19.2.4',
+          'react-hook-form': '^7.71.1',
+          'react-resizable-panels': 
+'^4.5.4',
+          recharts: '^3.7.0',
+          'tailwind-merge': '^3.4.0',
+          tailwindcss: '^4.1.18',
+          vaul: '^1.1.2',
+          vite: '^7.3.1',
+          wouter: '^3.9.0',
+          zod: '^4.3.6'
+        },
+        devDependencies: {
+          '@types/express': '^5.0.0',
+          '@types/express-session': 
+'^1.18.0',
+          '@types/node': '20.19.27',
+          '@types/passport': '^1.0.16',
+          '@types/passport-local': 
+'^1.0.38',
+          'ts-node': '^10.9.2',
+          typescript: '^5.9.3'
+        }
+      },
+      hasSideEffects: [Function: 
+hasSideEffects],
+      setResolvedCache: [Function: 
+setResolvedCache],
+      getResolvedCache: [Function: 
+getResolvedCache]
+    },
+    'fnpd_D:/CyberEase/client' => {
+      dir: 'D:/CyberEase',
+      data: {
+        name: 'rest-express',
+        version: '1.0.0',
+        type: 'module',
+        scripts: {
+          build: 'tsc -p 
+tsconfig.server.json',
+          dev: 'npm run build && node 
+dist/server/index.js',
+          start: 'node dist/index.js'
+        },
+        dependencies: {
+          '@hookform/resolvers': '^5.2.2',
+          '@radix-ui/react-accordion': 
+'^1.2.12',
+          '@radix-ui/react-alert-dialog': 
+'^1.1.15',
+          '@radix-ui/react-aspect-ratio': 
+'^1.1.8',
+          '@radix-ui/react-avatar': 
+'^1.1.11',
+          '@radix-ui/react-checkbox': 
+'^1.3.3',
+          '@radix-ui/react-collapsible': 
+'^1.1.12',
+          '@radix-ui/react-dialog': 
+'^1.1.15',
+          
+'@radix-ui/react-dropdown-menu': 
+'^2.1.16',
+          '@radix-ui/react-hover-card': 
+'^1.1.15',
+          '@radix-ui/react-label': 
+'^2.1.8',
+          '@radix-ui/react-menubar': 
+'^1.1.16',
+          
+'@radix-ui/react-navigation-menu': 
+'^1.2.14',
+          '@radix-ui/react-popover': 
+'^1.1.15',
+          '@radix-ui/react-progress': 
+'^1.1.8',
+          '@radix-ui/react-radio-group': 
+'^1.3.8',
+          '@radix-ui/react-scroll-area': 
+'^1.2.10',
+          '@radix-ui/react-select': 
+'^2.2.6',
+          '@radix-ui/react-separator': 
+'^1.1.8',
+          '@radix-ui/react-slider': 
+'^1.3.6',
+          '@radix-ui/react-slot': 
+'^1.2.4',
+          '@radix-ui/react-switch': 
+'^1.2.6',
+          '@radix-ui/react-tabs': 
+'^1.1.13',
+          '@radix-ui/react-toast': 
+'^1.2.15',
+          '@radix-ui/react-toggle': 
+'^1.1.10',
+          '@radix-ui/react-toggle-group': 
+'^1.1.11',
+          '@radix-ui/react-tooltip': 
+'^1.2.8',
+          '@tanstack/react-query': 
+'^5.90.20',
+          '@types/react': '^19.2.10',
+          '@types/react-dom': '^19.2.3',
+          '@vitejs/plugin-react': 
+'^5.1.2',
+          autoprefixer: '^10.4.23',
+          'class-variance-authority': 
+'^0.7.1',
+          clsx: '^2.1.1',
+          cmdk: '^1.1.1',
+          dotenv: '^17.2.3',
+          'drizzle-orm': '^0.45.1',
+          express: '^5.0.1',
+          'express-session': '^1.18.1',
+          'input-otp': '^1.4.2',
+          'lucide-react': '^0.563.0',
+          nanoid: '^5.1.6',
+          openai: '^6.17.0',
+          passport: '^0.7.0',
+          'passport-local': '^1.0.0',
+          pg: '^8.16.3',
+          postcss: '^8.5.6',
+          react: '^19.2.4',
+          'react-day-picker': '^9.13.0',
+          'react-dom': '^19.2.4',
+          'react-hook-form': '^7.71.1',
+          'react-resizable-panels': 
+'^4.5.4',
+          recharts: '^3.7.0',
+          'tailwind-merge': '^3.4.0',
+          tailwindcss: '^4.1.18',
+          vaul: '^1.1.2',
+          vite: '^7.3.1',
+          wouter: '^3.9.0',
+          zod: '^4.3.6'
+        },
+        devDependencies: {
+          '@types/express': '^5.0.0',
+          '@types/express-session': 
+'^1.18.0',
+          '@types/node': '20.19.27',
+          '@types/passport': '^1.0.16',
+          '@types/passport-local': 
+'^1.0.38',
+          'ts-node': '^10.9.2',
+          typescript: '^5.9.3'
+        }
+      },
+      hasSideEffects: [Function: 
+hasSideEffects],
+      setResolvedCache: [Function: 
+setResolvedCache],
+      getResolvedCache: [Function: 
+getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  worker: { format: 'iife', plugins: '() 
+=> plugins', rollupOptions: {} },
+  experimental: {
+    importGlobRestoreExtension: false,
+    renderBuiltUrl: undefined,
+    hmrPartialAccept: false
+  },
+  future: undefined,
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: { preserveSymlinks: 
+false },
+      include: [],
+      exclude: [],
+      needsInterop: [],
+      extensions: [],
+      holdUntilCrawlEnd: true,
+      force: false,
+      ignoreOutdatedRequests: false,
+      noDiscovery: true
+    },
+    external: [],
+    noExternal: [],
+    resolve: {
+      conditions: [ 'module', 'node', 
+'development|production' ],
+      externalConditions: [ 'node', 
+'module-sync' ]
+    }
+  },
+  dev: {
+    warmup: [],
+    sourcemap: { js: true },
+    sourcemapIgnoreList: [Function: 
+isInNodeModules],
+    preTransformRequests: false,
+    createEnvironment: [Function: 
+defaultCreateDevEnvironment],
+    recoverable: false,
+    moduleRunnerTransform: false
+  },
+  webSocketToken: 'Bsmsi4gB-e_v',
+  getSortedPlugins: [Function: 
+getSortedPlugins],
+  getSortedPluginHooks: [Function: 
+getSortedPluginHooks],
+  createResolver: [Function: 
+createResolver],
+  fsDenyGlob: [Function: arrayMatcher],
+  safeModulePaths: Set(0) {},
+  [Symbol(vite:resolved-config)]: true
+}
+2026-01-29T16:17:26.306Z vite:deps 
+(client) [32mremoving old cache dir 
+D:/CyberEase/node_modules/.vite/deps[39m
+2026-01-29T16:17:26.321Z vite:resolve 
+[32m3.72ms[39m [36mreact[39m -> [2mD:
+/CyberEase/node_modules/react/index.js[22
+m
+2026-01-29T16:17:26.325Z vite:resolve 
+[32m2.99ms[39m [36mreact-dom[39m -> [
+2mD:/CyberEase/node_modules/react-dom/inde
+x.js[22m
+2026-01-29T16:17:26.327Z vite:resolve 
+[32m1.74ms[39m 
+[36mreact/jsx-dev-runtime[39m -> [2mD:/
+CyberEase/node_modules/react/jsx-dev-runti
+me.js[22m
+2026-01-29T16:17:26.329Z vite:resolve 
+[32m0.84ms[39m 
+[36mreact/jsx-runtime[39m -> [2mD:/Cybe
+rEase/node_modules/react/jsx-runtime.js[2
+2m
+2026-01-29T16:17:26.331Z vite:deps 
+[32mscanning for dependencies...[39m
+9:47:26 PM [express] serving on http://localhost:5000
+2026-01-29T16:17:26.377Z vite:deps 
+Crawling dependencies using entries: 
+  [2mD:/CyberEase/client/index.html[22m
+2026-01-29T16:17:26.380Z vite:deps 
+[32mΓ£¿ static imports crawl ended[39m
+2026-01-29T16:17:26.406Z vite:resolve 
+[32m0.62ms[39m [36m/src/main.tsx[39m 
+-> 
+[2mD:/CyberEase/client/src/main.tsx[22m
+2026-01-29T16:17:26.422Z vite:resolve 
+[32m1.70ms[39m 
+[36mreact-dom/client[39m -> [2mD:/Cyber
+Ease/node_modules/react-dom/client.js[22m
+2026-01-29T16:17:26.424Z vite:resolve 
+[32m0.59ms[39m [36m./App[39m -> 
+[2mD:/CyberEase/client/src/App.tsx[22m
+2026-01-29T16:17:26.428Z vite:resolve 
+[32m0.92ms[39m 
+[36mreact/jsx-dev-runtime[39m -> [2mD:/
+CyberEase/node_modules/react/jsx-dev-runti
+me.js[22m
+2026-01-29T16:17:26.724Z vite:resolve 
+[32m2.46ms[39m [36mwouter[39m -> [2mD
+:/CyberEase/node_modules/wouter/src/index.
+js[22m
+2026-01-29T16:17:26.727Z vite:resolve 
+[32m0.91ms[39m 
+[36m./lib/queryClient[39m -> [2mD:/Cybe
+rEase/client/src/lib/queryClient.ts[22m
+2026-01-29T16:17:26.732Z vite:resolve 
+[32m3.37ms[39m 
+[36m@tanstack/react-query[39m -> [2mD:/
+CyberEase/node_modules/@tanstack/react-que
+ry/build/modern/index.js[22m
+2026-01-29T16:17:26.736Z vite:resolve 
+[32m1.04ms[39m [36mD:\CyberEase\client\
+src/components/ui/toaster[39m -> [2mD:/C
+yberEase/client/src/components/ui/toaster.
+tsx[22m
+2026-01-29T16:17:26.736Z vite:resolve 
+[32m2.14ms[39m 
+[36m@/components/ui/toaster[39m -> [2mD
+:/CyberEase/client/src/components/ui/toast
+er.tsx[22m
+2026-01-29T16:17:26.739Z vite:resolve 
+[32m1.18ms[39m [36mD:\CyberEase\client\
+src/components/ui/tooltip[39m -> [2mD:/C
+yberEase/client/src/components/ui/tooltip.
+tsx[22m
+2026-01-29T16:17:26.740Z vite:resolve 
+[32m1.86ms[39m 
+[36m@/components/ui/tooltip[39m -> [2mD
+:/CyberEase/client/src/components/ui/toolt
+ip.tsx[22m
+2026-01-29T16:17:26.743Z vite:resolve 
+[32m1.63ms[39m [36mD:\CyberEase\client\
+src/pages/not-found[39m -> [2mD:/CyberEa
+se/client/src/pages/not-found.tsx[22m
+2026-01-29T16:17:26.744Z vite:resolve 
+[32m2.22ms[39m 
+[36m@/pages/not-found[39m -> [2mD:/Cybe
+rEase/client/src/pages/not-found.tsx[22m
+2026-01-29T16:17:26.748Z vite:resolve 
+[32m1.66ms[39m [36mD:\CyberEase\client\
+src/pages/auth-page[39m -> [2mD:/CyberEa
+se/client/src/pages/auth-page.tsx[22m
+2026-01-29T16:17:26.748Z vite:resolve 
+[32m2.25ms[39m 
+[36m@/pages/auth-page[39m -> [2mD:/Cybe
+rEase/client/src/pages/auth-page.tsx[22m
+2026-01-29T16:17:26.752Z vite:resolve 
+[32m0.95ms[39m [36mD:\CyberEase\client\
+src/pages/dashboard[39m -> [2mD:/CyberEa
+se/client/src/pages/dashboard.tsx[22m
+2026-01-29T16:17:26.752Z vite:resolve 
+[32m1.41ms[39m 
+[36m@/pages/dashboard[39m -> [2mD:/Cybe
+rEase/client/src/pages/dashboard.tsx[22m
+2026-01-29T16:17:26.754Z vite:resolve 
+[32m0.76ms[39m [36mD:\CyberEase\client\
+src/pages/authentication-module[39m -> [
+2mD:/CyberEase/client/src/pages/authentica
+tion-module.tsx[22m
+2026-01-29T16:17:26.754Z vite:resolve 
+[32m1.21ms[39m 
+[36m@/pages/authentication-module[39m 
+-> [2mD:/CyberEase/client/src/pages/authe
+ntication-module.tsx[22m
+2026-01-29T16:17:26.756Z vite:resolve 
+[32m0.72ms[39m [36mD:\CyberEase\client\
+src/pages/access-control-module[39m -> [
+2mD:/CyberEase/client/src/pages/access-con
+trol-module.tsx[22m
+2026-01-29T16:17:26.756Z vite:resolve 
+[32m1.16ms[39m 
+[36m@/pages/access-control-module[39m 
+-> [2mD:/CyberEase/client/src/pages/acces
+s-control-module.tsx[22m
+2026-01-29T16:17:26.759Z vite:resolve 
+[32m0.96ms[39m [36mD:\CyberEase\client\
+src/pages/crypto-module[39m -> [2mD:/Cyb
+erEase/client/src/pages/crypto-module.tsx
+[22m
+2026-01-29T16:17:26.759Z vite:resolve 
+[32m1.43ms[39m 
+[36m@/pages/crypto-module[39m -> [2mD:/
+CyberEase/client/src/pages/crypto-module.t
+sx[22m
+2026-01-29T16:17:26.763Z vite:resolve 
+[32m1.75ms[39m [36mD:\CyberEase\client\
+src/pages/hashing-module[39m -> [2mD:/Cy
+berEase/client/src/pages/hashing-module.ts
+x[22m
+2026-01-29T16:17:26.763Z vite:resolve 
+[32m2.33ms[39m 
+[36m@/pages/hashing-module[39m -> [2mD:
+/CyberEase/client/src/pages/hashing-module
+.tsx[22m
+2026-01-29T16:17:26.766Z vite:resolve 
+[32m1.85ms[39m [36mD:\CyberEase\client\
+src/pages/digitalsignature-module[39m -> 
+[2mD:/CyberEase/client/src/pages/digitals
+ignature-module.tsx[22m
+2026-01-29T16:17:26.766Z vite:resolve 
+[32m2.26ms[39m 
+[36m@/pages/digitalsignature-module[39m 
+-> [2mD:/CyberEase/client/src/pages/digit
+alsignature-module.tsx[22m
+2026-01-29T16:17:26.767Z vite:resolve 
+[32m0.69ms[39m [36mD:\CyberEase\client\
+src/pages/attack-module[39m -> [2mD:/Cyb
+erEase/client/src/pages/attack-module.tsx
+[22m
+2026-01-29T16:17:26.767Z vite:resolve 
+[32m1.01ms[39m 
+[36m@/pages/attack-module[39m -> [2mD:/
+CyberEase/client/src/pages/attack-module.t
+sx[22m
+2026-01-29T16:17:26.769Z vite:resolve 
+[32m0.47ms[39m [36mD:\CyberEase\client\
+src/lib/protected-route[39m -> [2mD:/Cyb
+erEase/client/src/lib/protected-route.tsx
+[22m
+2026-01-29T16:17:26.769Z vite:resolve 
+[32m0.71ms[39m 
+[36m@/lib/protected-route[39m -> [2mD:/
+CyberEase/client/src/lib/protected-route.t
+sx[22m
+2026-01-29T16:17:26.770Z vite:resolve 
+[32m0.64ms[39m [36mD:\CyberEase\client\
+src/pages/digitalsignature-module-simulati
+on[39m -> [2mD:/CyberEase/client/src/pag
+es/digitalsignature-module-simulation.tsx
+[22m
+2026-01-29T16:17:26.770Z vite:resolve 
+[32m0.88ms[39m [36m@/pages/digitalsigna
+ture-module-simulation[39m -> [2mD:/Cybe
+rEase/client/src/pages/digitalsignature-mo
+dule-simulation.tsx[22m
+2026-01-29T16:17:26.772Z vite:resolve 
+[32m0.59ms[39m [36mD:\CyberEase\client\
+src/pages/digitalsignature-module-theory[
+39m -> [2mD:/CyberEase/client/src/pages/d
+igitalsignature-module-theory.tsx[22m
+2026-01-29T16:17:26.772Z vite:resolve 
+[32m1.02ms[39m [36m@/pages/digitalsigna
+ture-module-theory[39m -> [2mD:/CyberEas
+e/client/src/pages/digitalsignature-module
+-theory.tsx[22m
+2026-01-29T16:17:26.779Z vite:resolve 
+[32m0.70ms[39m [36mD:\CyberEase\client\
+src/components/layout/Layout[39m -> [2mD
+:/CyberEase/client/src/components/layout/L
+ayout.tsx[22m
+2026-01-29T16:17:26.779Z vite:resolve 
+[32m1.05ms[39m 
+[36m@/components/layout/Layout[39m -> [
+2mD:/CyberEase/client/src/components/layou
+t/Layout.tsx[22m
+2026-01-29T16:17:26.782Z vite:resolve 
+[32m1.92ms[39m [36mD:\CyberEase\client\
+src/components/ui/card[39m -> [2mD:/Cybe
+rEase/client/src/components/ui/card.tsx[2
+2m
+2026-01-29T16:17:26.782Z vite:resolve 
+[32m2.04ms[39m [36mD:\CyberEase\client\
+src/hooks/use-auth[39m -> [2mD:/CyberEas
+e/client/src/hooks/use-auth.ts[22m
+2026-01-29T16:17:26.782Z vite:resolve 
+[32m2.07ms[39m [36mD:\CyberEase\client\
+src/hooks/use-toast[39m -> [2mD:/CyberEa
+se/client/src/hooks/use-toast.ts[22m
+2026-01-29T16:17:26.782Z vite:resolve 
+[32m2.79ms[39m 
+[36m@/components/ui/card[39m -> [2mD:/C
+yberEase/client/src/components/ui/card.tsx
+[22m
+2026-01-29T16:17:26.782Z vite:resolve 
+[32m2.56ms[39m 
+[36m@/hooks/use-auth[39m -> [2mD:/Cyber
+Ease/client/src/hooks/use-auth.ts[22m
+2026-01-29T16:17:26.782Z vite:resolve 
+[32m2.51ms[39m 
+[36m@/hooks/use-toast[39m -> [2mD:/Cybe
+rEase/client/src/hooks/use-toast.ts[22m
+2026-01-29T16:17:26.785Z vite:resolve 
+[32m2.23ms[39m [36mreact[39m -> [2mD:
+/CyberEase/node_modules/react/index.js[22
+m
+2026-01-29T16:17:26.790Z vite:resolve 
+[32m3.31ms[39m [36mlucide-react[39m 
+-> [2mD:/CyberEase/node_modules/lucide-re
+act/dist/esm/lucide-react.js[22m
+2026-01-29T16:17:26.790Z vite:resolve 
+[32m3.29ms[39m [36mD:\CyberEase\client\
+src/components/ui/module-card[39m -> [2m
+D:/CyberEase/client/src/components/ui/modu
+le-card.tsx[22m
+2026-01-29T16:17:26.790Z vite:resolve 
+[32m3.42ms[39m [36mD:\CyberEase\client\
+src/components/ui/toast[39m -> [2mD:/Cyb
+erEase/client/src/components/ui/toast.tsx
+[22m
+2026-01-29T16:17:26.790Z vite:resolve 
+[32m4.21ms[39m 
+[36m@/components/ui/module-card[39m -> 
+[2mD:/CyberEase/client/src/components/ui/m
+odule-card.tsx[22m
+2026-01-29T16:17:26.790Z vite:resolve 
+[32m4.14ms[39m 
+[36m@/components/ui/toast[39m -> [2mD:/
+CyberEase/client/src/components/ui/toast.t
+sx[22m
+2026-01-29T16:17:26.797Z vite:resolve 
+[32m6.16ms[39m 
+[36mreact-hook-form[39m -> [2mD:/CyberE
+ase/node_modules/react-hook-form/dist/inde
+x.esm.mjs[22m
+2026-01-29T16:17:26.797Z vite:resolve 
+[32m6.19ms[39m 
+[36m@radix-ui/react-tooltip[39m -> [2mD
+:/CyberEase/node_modules/@radix-ui/react-t
+ooltip/dist/index.mjs[22m
+2026-01-29T16:17:26.797Z vite:resolve 
+[32m6.19ms[39m 
+[36m./access-control-module-theory[39m 
+-> [2mD:/CyberEase/client/src/pages/acces
+s-control-module-theory.tsx[22m
+2026-01-29T16:17:26.799Z vite:resolve 
+[32m1.40ms[39m 
+[36m./auth-module-theory[39m -> [2mD:/C
+yberEase/client/src/pages/auth-module-theo
+ry.tsx[22m
+2026-01-29T16:17:26.800Z vite:resolve 
+[32m1.43ms[39m 
+[36m./crypto-module-theory[39m -> [2mD:
+/CyberEase/client/src/pages/crypto-module-
+theory.tsx[22m
+2026-01-29T16:17:26.805Z vite:resolve 
+[32m4.22ms[39m [36m./digitalsignature-m
+odule-theory[39m -> [2mD:/CyberEase/clie
+nt/src/pages/digitalsignature-module-theor
+y.tsx[22m
+2026-01-29T16:17:26.805Z vite:resolve 
+[32m4.32ms[39m 
+[36m@hookform/resolvers/zod[39m -> [2mD
+:/CyberEase/node_modules/@hookform/resolve
+rs/zod/dist/zod.mjs[22m
+2026-01-29T16:17:26.806Z vite:resolve 
+[32m5.11ms[39m 
+[36m./hashing-module-theory[39m -> [2mD
+:/CyberEase/client/src/pages/hashing-modul
+e-theory.tsx[22m
+2026-01-29T16:17:26.807Z vite:resolve 
+[32m6.19ms[39m [36m./access-control-mod
+ule-simulation[39m -> [2mD:/CyberEase/cl
+ient/src/pages/access-control-module-simul
+ation.tsx[22m
+2026-01-29T16:17:26.808Z vite:resolve 
+[32m6.57ms[39m [36mD:\CyberEase\client\
+src/components/ui/button[39m -> [2mD:/Cy
+berEase/client/src/components/ui/button.ts
+x[22m
+2026-01-29T16:17:26.808Z vite:resolve 
+[32m6.73ms[39m [36mD:\CyberEase\client\
+src/lib/utils[39m -> [2mD:/CyberEase/cli
+ent/src/lib/utils.ts[22m
+2026-01-29T16:17:26.808Z vite:resolve 
+[32m7.15ms[39m 
+[36m@/components/ui/button[39m -> [2mD:
+/CyberEase/client/src/components/ui/button
+.tsx[22m
+2026-01-29T16:17:26.808Z vite:resolve 
+[32m7.17ms[39m [36m@/lib/utils[39m -> 
+[2mD:/CyberEase/client/src/lib/utils.ts[
+22m
+2026-01-29T16:17:26.812Z vite:resolve 
+[32m3.47ms[39m 
+[36m./auth-module-simulation[39m -> [2m
+D:/CyberEase/client/src/pages/auth-module-
+simulation.tsx[22m
+2026-01-29T16:17:26.812Z vite:resolve 
+[32m2.99ms[39m 
+[36m./crypto-module-simulation[39m -> [
+2mD:/CyberEase/client/src/pages/crypto-mod
+ule-simulation.tsx[22m
+2026-01-29T16:17:26.816Z vite:resolve 
+[32m3.08ms[39m [36m./digitalsignature-m
+odule-simulation[39m -> [2mD:/CyberEase/
+client/src/pages/digitalsignature-module-s
+imulation.tsx[22m
+2026-01-29T16:17:26.816Z vite:resolve 
+[32m3.13ms[39m 
+[36m./hashing-module-simulation[39m -> 
+[2mD:/CyberEase/client/src/pages/hashing-m
+odule-simulation.tsx[22m
+2026-01-29T16:17:26.816Z vite:resolve 
+[32m3.12ms[39m [36mzod[39m -> [2mD:/C
+yberEase/node_modules/zod/index.js[22m
+2026-01-29T16:17:26.817Z vite:resolve 
+[32m3.47ms[39m [36mD:\CyberEase\client\
+src/components/ui/input[39m -> [2mD:/Cyb
+erEase/client/src/components/ui/input.tsx
+[22m
+2026-01-29T16:17:26.817Z vite:resolve 
+[32m3.52ms[39m [36mD:\CyberEase\client\
+src/components/ui/badge[39m -> [2mD:/Cyb
+erEase/client/src/components/ui/badge.tsx
+[22m
+2026-01-29T16:17:26.817Z vite:resolve 
+[32m3.97ms[39m 
+[36m@/components/ui/input[39m -> [2mD:/
+CyberEase/client/src/components/ui/input.t
+sx[22m
+2026-01-29T16:17:26.817Z vite:resolve 
+[32m3.88ms[39m 
+[36m@/components/ui/badge[39m -> [2mD:/
+CyberEase/client/src/components/ui/badge.t
+sx[22m
+2026-01-29T16:17:26.820Z vite:resolve 
+[32m1.32ms[39m [36mD:\CyberEase\client\
+src/components/ui/alert[39m -> [2mD:/Cyb
+erEase/client/src/components/ui/alert.tsx
+[22m
+2026-01-29T16:17:26.820Z vite:resolve 
+[32m1.43ms[39m [36mD:\CyberEase\client\
+src/components/ui/label[39m -> [2mD:/Cyb
+erEase/client/src/components/ui/label.tsx
+[22m
+2026-01-29T16:17:26.820Z vite:resolve 
+[32m1.80ms[39m 
+[36m@/components/ui/alert[39m -> [2mD:/
+CyberEase/client/src/components/ui/alert.t
+sx[22m
+2026-01-29T16:17:26.820Z vite:resolve 
+[32m1.81ms[39m 
+[36m@/components/ui/label[39m -> [2mD:/
+CyberEase/client/src/components/ui/label.t
+sx[22m
+2026-01-29T16:17:26.822Z vite:resolve 
+[32m0.89ms[39m [36mD:\CyberEase\client\
+src/components/ui/separator[39m -> [2mD:
+/CyberEase/client/src/components/ui/separa
+tor.tsx[22m
+2026-01-29T16:17:26.823Z vite:resolve 
+[32m1.59ms[39m 
+[36m@/components/ui/separator[39m -> [2
+mD:/CyberEase/client/src/components/ui/sep
+arator.tsx[22m
+2026-01-29T16:17:26.827Z vite:resolve 
+[32m1.89ms[39m [36mD:\CyberEase\client\
+src/hooks/use-modules[39m -> [2mD:/Cyber
+Ease/client/src/hooks/use-modules.ts[22m
+2026-01-29T16:17:26.827Z vite:resolve 
+[32m2.09ms[39m [36mD:\CyberEase\client\
+src/components/ui/progress[39m -> [2mD:/
+CyberEase/client/src/components/ui/progres
+s.tsx[22m
+2026-01-29T16:17:26.827Z vite:resolve 
+[32m2.75ms[39m 
+[36m@/hooks/use-modules[39m -> [2mD:/Cy
+berEase/client/src/hooks/use-modules.ts[2
+2m
+2026-01-29T16:17:26.827Z vite:resolve 
+[32m2.61ms[39m 
+[36m@/components/ui/progress[39m -> [2m
+D:/CyberEase/client/src/components/ui/prog
+ress.tsx[22m
+2026-01-29T16:17:26.835Z vite:resolve 
+[32m5.41ms[39m 
+[36m@radix-ui/react-toast[39m -> [2mD:/
+CyberEase/node_modules/@radix-ui/react-toa
+st/dist/index.mjs[22m
+2026-01-29T16:17:26.835Z vite:resolve 
+[32m5.45ms[39m [36mclsx[39m -> [2mD:/
+CyberEase/node_modules/clsx/dist/clsx.mjs
+[22m
+2026-01-29T16:17:26.843Z vite:resolve 
+[32m3.64ms[39m 
+[36mclass-variance-authority[39m -> [2m
+D:/CyberEase/node_modules/class-variance-a
+uthority/dist/index.mjs[22m
+2026-01-29T16:17:26.843Z vite:resolve 
+[32m3.85ms[39m [36mtailwind-merge[39m 
+-> [2mD:/CyberEase/node_modules/tailwind-
+merge/dist/bundle-mjs.mjs[22m
+2026-01-29T16:17:26.846Z vite:resolve 
+[32m1.77ms[39m [36m./Sidebar[39m -> [
+2mD:/CyberEase/client/src/components/layou
+t/Sidebar.tsx[22m
+2026-01-29T16:17:26.847Z vite:resolve 
+[32m2.36ms[39m [36mD:\CyberEase\client\
+src/components/ui/slider[39m -> [2mD:/Cy
+berEase/client/src/components/ui/slider.ts
+x[22m
+2026-01-29T16:17:26.847Z vite:resolve 
+[32m2.43ms[39m 
+[36mD:\CyberEase\shared/routes[39m -> 
+[2mD:/CyberEase/shared/routes.ts[22m
+2026-01-29T16:17:26.847Z vite:resolve 
+[32m3.09ms[39m 
+[36m@/components/ui/slider[39m -> [2mD:
+/CyberEase/client/src/components/ui/slider
+.tsx[22m
+2026-01-29T16:17:26.847Z vite:resolve 
+[32m3.08ms[39m [36m@shared/routes[39m 
+-> [2mD:/CyberEase/shared/routes.ts[22m
+2026-01-29T16:17:26.853Z vite:resolve 
+[32m1.96ms[39m [36m./AITutor[39m -> [
+2mD:/CyberEase/client/src/components/layou
+t/AITutor.tsx[22m
+2026-01-29T16:17:26.858Z vite:resolve 
+[32m3.60ms[39m 
+[36m@radix-ui/react-slot[39m -> [2mD:/C
+yberEase/node_modules/@radix-ui/react-slot
+/dist/index.mjs[22m
+2026-01-29T16:17:26.866Z vite:resolve 
+[32m2.35ms[39m 
+[36m@emailjs/browser[39m -> 
+[2mnull[22m
+2026-01-29T16:17:26.866Z vite:resolve 
+[32m2.14ms[39m [36mD:\CyberEase\client\
+src/components/ui/checkbox[39m -> [2mD:/
+CyberEase/client/src/components/ui/checkbo
+x.tsx[22m
+2026-01-29T16:17:26.866Z vite:resolve 
+[32m2.53ms[39m 
+[36m@/components/ui/checkbox[39m -> [2m
+D:/CyberEase/client/src/components/ui/chec
+kbox.tsx[22m
+2026-01-29T16:17:26.870Z vite:resolve 
+[32m2.66ms[39m 
+[36m@radix-ui/react-separator[39m -> [2
+mD:/CyberEase/node_modules/@radix-ui/react
+-separator/dist/index.mjs[22m
+2026-01-29T16:17:26.870Z vite:resolve 
+[32m2.80ms[39m [36m./ThemeToggle[39m 
+-> [2mD:/CyberEase/client/src/components/
+layout/ThemeToggle.tsx[22m
+2026-01-29T16:17:26.871Z vite:resolve 
+[32m2.91ms[39m [36mD:\CyberEase\client\
+src/components/ui/tabs[39m -> [2mD:/Cybe
+rEase/client/src/components/ui/tabs.tsx[2
+2m
+2026-01-29T16:17:26.871Z vite:resolve 
+[32m3.45ms[39m 
+[36m@/components/ui/tabs[39m -> [2mD:/C
+yberEase/client/src/components/ui/tabs.tsx
+[22m
+2026-01-29T16:17:26.874Z vite:resolve 
+[32m1.21ms[39m [36mD:\CyberEase\client\
+src/components/ui/sheet[39m -> [2mD:/Cyb
+erEase/client/src/components/ui/sheet.tsx
+[22m
+2026-01-29T16:17:26.874Z vite:resolve 
+[32m2.24ms[39m 
+[36m@/components/ui/sheet[39m -> [2mD:/
+CyberEase/client/src/components/ui/sheet.t
+sx[22m
+2026-01-29T16:17:26.876Z vite:resolve 
+[32m0.91ms[39m [36mD:\CyberEase\client\
+src/components/ui/switch[39m -> [2mD:/Cy
+berEase/client/src/components/ui/switch.ts
+x[22m
+2026-01-29T16:17:26.877Z vite:resolve 
+[32m1.56ms[39m 
+[36m@/components/ui/switch[39m -> [2mD:
+/CyberEase/client/src/components/ui/switch
+.tsx[22m
+2026-01-29T16:17:26.880Z vite:resolve 
+[32m2.17ms[39m 
+[36m@radix-ui/react-label[39m -> [2mD:/
+CyberEase/node_modules/@radix-ui/react-lab
+el/dist/index.mjs[22m
+2026-01-29T16:17:26.880Z vite:resolve 
+[32m2.22ms[39m 
+[36m@radix-ui/react-progress[39m -> [2m
+D:/CyberEase/node_modules/@radix-ui/react-
+progress/dist/index.mjs[22m
+2026-01-29T16:17:26.881Z vite:resolve 
+[32m0.44ms[39m [36mD:\CyberEase\client\
+src/components/ui/select[39m -> [2mD:/Cy
+berEase/client/src/components/ui/select.ts
+x[22m
+2026-01-29T16:17:26.881Z vite:resolve 
+[32m0.76ms[39m 
+[36m@/components/ui/select[39m -> [2mD:
+/CyberEase/client/src/components/ui/select
+.tsx[22m
+2026-01-29T16:17:26.883Z vite:resolve 
+[32m0.68ms[39m [36m./schema.js[39m -> 
+[2mD:/CyberEase/shared/schema.js[22m
+2026-01-29T16:17:26.884Z vite:resolve 
+[32m0.44ms[39m [36mD:\CyberEase\client\
+src/components/ui/accordion[39m -> [2mD:
+/CyberEase/client/src/components/ui/accord
+ion.tsx[22m
+2026-01-29T16:17:26.884Z vite:resolve 
+[32m0.85ms[39m 
+[36m@/components/ui/accordion[39m -> [2
+mD:/CyberEase/client/src/components/ui/acc
+ordion.tsx[22m
+2026-01-29T16:17:26.888Z vite:resolve 
+[32m2.86ms[39m 
+[36m@radix-ui/react-tabs[39m -> [2mD:/C
+yberEase/node_modules/@radix-ui/react-tabs
+/dist/index.mjs[22m
+2026-01-29T16:17:26.889Z vite:resolve 
+[32m2.92ms[39m 
+[36m@radix-ui/react-checkbox[39m -> [2m
+D:/CyberEase/node_modules/@radix-ui/react-
+checkbox/dist/index.mjs[22m
+2026-01-29T16:17:26.892Z vite:resolve 
+[32m2.15ms[39m 
+[36m@radix-ui/react-dialog[39m -> [2mD:
+/CyberEase/node_modules/@radix-ui/react-di
+alog/dist/index.mjs[22m
+2026-01-29T16:17:26.892Z vite:resolve 
+[32m2.46ms[39m [36mframer-motion[39m 
+-> [2mnull[22m
+2026-01-29T16:17:26.901Z vite:resolve 
+[32m3.44ms[39m 
+[36m@radix-ui/react-switch[39m -> [2mD:
+/CyberEase/node_modules/@radix-ui/react-sw
+itch/dist/index.mjs[22m
+2026-01-29T16:17:26.901Z vite:resolve 
+[32m3.53ms[39m 
+[36m@radix-ui/react-slider[39m -> [2mD:
+/CyberEase/node_modules/@radix-ui/react-sl
+ider/dist/index.mjs[22m
+2026-01-29T16:17:26.901Z vite:resolve 
+[32m3.54ms[39m 
+[36m@radix-ui/react-accordion[39m -> [2
+mD:/CyberEase/node_modules/@radix-ui/react
+-accordion/dist/index.mjs[22m
+2026-01-29T16:17:26.901Z vite:resolve 
+[32m3.54ms[39m 
+[36m@radix-ui/react-select[39m -> [2mD:
+/CyberEase/node_modules/@radix-ui/react-se
+lect/dist/index.mjs[22m
+2026-01-29T16:17:26.902Z vite:resolve 
+[32m0.45ms[39m [36mD:\CyberEase\client\
+src/components/ui/scroll-area[39m -> [2m
+D:/CyberEase/client/src/components/ui/scro
+ll-area.tsx[22m
+2026-01-29T16:17:26.902Z vite:resolve 
+[32m0.64ms[39m 
+[36m@/components/ui/scroll-area[39m -> 
+[2mD:/CyberEase/client/src/components/ui/s
+croll-area.tsx[22m
+2026-01-29T16:17:26.903Z vite:resolve 
+[32m0.35ms[39m [36mD:\CyberEase\client\
+src/hooks/use-chat[39m -> [2mD:/CyberEas
+e/client/src/hooks/use-chat.ts[22m
+2026-01-29T16:17:26.903Z vite:resolve 
+[32m0.46ms[39m 
+[36m@/hooks/use-chat[39m -> [2mD:/Cyber
+Ease/client/src/hooks/use-chat.ts[22m
+2026-01-29T16:17:26.907Z vite:resolve 
+[32m3.61ms[39m [36mdate-fns[39m -> [2
+mD:/CyberEase/node_modules/date-fns/index.
+js[22m
+2026-01-29T16:17:26.913Z vite:resolve 
+[32m1.37ms[39m 
+[36m@radix-ui/react-scroll-area[39m -> 
+[2mD:/CyberEase/node_modules/@radix-ui/rea
+ct-scroll-area/dist/index.mjs[22m
+2026-01-29T16:17:26.937Z vite:deps Scan 
+completed in 605.53ms: 
+  [36m@hookform/resolvers/zod[39m -> [2
+mD:/CyberEase/node_modules/@hookform/resol
+vers/zod/dist/zod.mjs[22m
+  [36m@radix-ui/react-accordion[39m -> 
+[2mD:/CyberEase/node_modules/@radix-ui/rea
+ct-accordion/dist/index.mjs[22m
+  [36m@radix-ui/react-checkbox[39m -> [
+2mD:/CyberEase/node_modules/@radix-ui/reac
+t-checkbox/dist/index.mjs[22m
+  [36m@radix-ui/react-dialog[39m -> [2m
+D:/CyberEase/node_modules/@radix-ui/react-
+dialog/dist/index.mjs[22m
+  [36m@radix-ui/react-label[39m -> [2mD
+:/CyberEase/node_modules/@radix-ui/react-l
+abel/dist/index.mjs[22m
+  [36m@radix-ui/react-progress[39m -> [
+2mD:/CyberEase/node_modules/@radix-ui/reac
+t-progress/dist/index.mjs[22m
+  [36m@radix-ui/react-scroll-area[39m 
+-> [2mD:/CyberEase/node_modules/@radix-ui
+/react-scroll-area/dist/index.mjs[22m
+  [36m@radix-ui/react-select[39m -> [2m
+D:/CyberEase/node_modules/@radix-ui/react-
+select/dist/index.mjs[22m
+  [36m@radix-ui/react-separator[39m -> 
+[2mD:/CyberEase/node_modules/@radix-ui/rea
+ct-separator/dist/index.mjs[22m
+  [36m@radix-ui/react-slider[39m -> [2m
+D:/CyberEase/node_modules/@radix-ui/react-
+slider/dist/index.mjs[22m
+  [36m@radix-ui/react-slot[39m -> [2mD:
+/CyberEase/node_modules/@radix-ui/react-sl
+ot/dist/index.mjs[22m
+  [36m@radix-ui/react-switch[39m -> [2m
+D:/CyberEase/node_modules/@radix-ui/react-
+switch/dist/index.mjs[22m
+  [36m@radix-ui/react-tabs[39m -> [2mD:
+/CyberEase/node_modules/@radix-ui/react-ta
+bs/dist/index.mjs[22m
+  [36m@radix-ui/react-toast[39m -> [2mD
+:/CyberEase/node_modules/@radix-ui/react-t
+oast/dist/index.mjs[22m
+  [36m@radix-ui/react-tooltip[39m -> [2
+mD:/CyberEase/node_modules/@radix-ui/react
+-tooltip/dist/index.mjs[22m
+  [36m@tanstack/react-query[39m -> [2mD
+:/CyberEase/node_modules/@tanstack/react-q
+uery/build/modern/index.js[22m
+  [36mclass-variance-authority[39m -> [
+2mD:/CyberEase/node_modules/class-variance
+-authority/dist/index.mjs[22m
+  [36mclsx[39m -> [2mD:/CyberEase/node_
+modules/clsx/dist/clsx.mjs[22m
+  [36mdate-fns[39m -> [2mD:/CyberEase/n
+ode_modules/date-fns/index.js[22m
+  [36mlucide-react[39m -> [2mD:/CyberEa
+se/node_modules/lucide-react/dist/esm/luci
+de-react.js[22m
+  [36mreact[39m -> [2mD:/CyberEase/node
+_modules/react/index.js[22m
+  [36mreact-dom/client[39m -> [2mD:/Cyb
+erEase/node_modules/react-dom/client.js[2
+2m
+  [36mreact-hook-form[39m -> [2mD:/Cybe
+rEase/node_modules/react-hook-form/dist/in
+dex.esm.mjs[22m
+  [36mreact/jsx-dev-runtime[39m -> [2mD
+:/CyberEase/node_modules/react/jsx-dev-run
+time.js[22m
+  [36mtailwind-merge[39m -> [2mD:/Cyber
+Ease/node_modules/tailwind-merge/dist/bund
+le-mjs.mjs[22m
+  [36mwouter[39m -> [2mD:/CyberEase/nod
+e_modules/wouter/src/index.js[22m
+  [36mzod[39m -> [2mD:/CyberEase/node_m
+odules/zod/index.js[22m
+[31m(!) Failed to run dependency scan. 
+Skipping dependency pre-bundling. Error: 
+The following dependencies are imported 
+but could not be resolved:
+
+  [36m@emailjs/browser[31m 
+[37m[2m(imported by D:/CyberEase/client/
+src/pages/auth-module-simulation.tsx)[22m
+[31m
+  [36mframer-motion[31m 
+[37m[2m(imported by D:/CyberEase/client/
+src/components/layout/AITutor.tsx)[22m[3
+1m
+
+Are they installed?
+    at file:///D:/CyberEase/node_modules/v
+ite/dist/node/chunks/config.js:31903:33
+    at process.processTicksAndRejections 
+(node:internal/process/task_queues:95:5)
+    at async file:///D:/CyberEase/node_mod
+ules/vite/dist/node/chunks/config.js:34111
+:15[39m

@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { useState } from "react";
-import HashingModuleTheory from "./hashing-module-theory";
-import HashingModuleSimulation from "./hashing-module-simulation";
+import DigitalSignatureModuleTheory from "./digitalsignature-module-theory";
+import DigitalSignatureModuleSimulation from "./digitalsignature-module-simulation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield } from "lucide-react";
@@ -9,7 +9,7 @@ import { BackButton } from "@/components/ui/back-button";
 
 type Mode = "select" | "theory" | "simulation";
 
-export default function HashingModule() {
+export default function DigitalSignatureModule() {
   const [mode, setMode] = useState<Mode>("select");
 
   return (
@@ -22,11 +22,11 @@ export default function HashingModule() {
               <Shield className="w-12 h-12 mx-auto text-primary" />
 
               <h1 className="text-3xl font-bold">
-                Hashing Module
+                Digital Signatures Module
               </h1>
 
               <p className="text-muted-foreground">
-                Learn hashing through theory or interactive encryption simulations.
+                Learn digital signature through theory or interactive encryption simulations.
               </p>
 
               <div className="grid md:grid-cols-2 gap-4">
@@ -49,14 +49,14 @@ export default function HashingModule() {
       {mode === "theory" && (
         <>
           <BackButton onClick={() => setMode("select")} label="Back to Module" />
-          <HashingModuleTheory />
+          <DigitalSignatureModuleTheory />
         </>
       )}
 
       {mode === "simulation" && (
         <>
           <BackButton onClick={() => setMode("select")} label="Back to Module" />
-          <HashingModuleSimulation />
+          <DigitalSignatureModuleSimulation />
         </>
       )}
     </Layout>

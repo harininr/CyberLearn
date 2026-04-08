@@ -1,15 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { useState } from "react";
-import HashingModuleTheory from "./hashing-module-theory";
-import HashingModuleSimulation from "./hashing-module-simulation";
+import AuthModuleTheory from "./auth-module-theory";
+import AuthModuleSimulation from "./auth-module-simulation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield } from "lucide-react";
+import { Shield, Building } from "lucide-react";
 import { BackButton } from "@/components/ui/back-button";
 
 type Mode = "select" | "theory" | "simulation";
 
-export default function HashingModule() {
+export default function AuthenticationModule() {
   const [mode, setMode] = useState<Mode>("select");
 
   return (
@@ -22,11 +22,11 @@ export default function HashingModule() {
               <Shield className="w-12 h-12 mx-auto text-primary" />
 
               <h1 className="text-3xl font-bold">
-                Hashing Module
+                Authentication & Identity Management
               </h1>
 
               <p className="text-muted-foreground">
-                Learn hashing through theory or interactive encryption simulations.
+                Choose how you want to learn authentication concepts.
               </p>
 
               <div className="grid md:grid-cols-2 gap-4">
@@ -38,6 +38,7 @@ export default function HashingModule() {
                   variant="secondary"
                   onClick={() => setMode("simulation")}
                 >
+                  <Building className="w-4 h-4 mr-2" />
                   Start Simulation
                 </Button>
               </div>
@@ -49,14 +50,14 @@ export default function HashingModule() {
       {mode === "theory" && (
         <>
           <BackButton onClick={() => setMode("select")} label="Back to Module" />
-          <HashingModuleTheory />
+          <AuthModuleTheory />
         </>
       )}
 
       {mode === "simulation" && (
         <>
           <BackButton onClick={() => setMode("select")} label="Back to Module" />
-          <HashingModuleSimulation />
+          <AuthModuleSimulation />
         </>
       )}
     </Layout>

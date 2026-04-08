@@ -1,5 +1,28 @@
 import { z } from 'zod';
-import { User, InsertUser, LoginRequest, Log, Conversation, Message, AesEncryptRequest, AesDecryptRequest, RsaEncryptRequest, RsaDecryptRequest, HashRequest, SignRequest, VerifyRequest, BruteForceRequest } from './schema';
+import {
+  User,
+  InsertUser,
+  LoginRequest,
+  Log,
+  Conversation,
+  Message,
+  AesEncryptRequest,
+  AesDecryptRequest,
+  RsaEncryptRequest,
+  RsaDecryptRequest,
+  HashRequest,
+  SignRequest,
+  VerifyRequest,
+  BruteForceRequest,
+  AccessControlPolicy,
+  AccessControlLog,
+  AuthSimulationUser,
+  InsertAuthSimulationUser,
+  HashingSimulationUser,
+  InsertHashingSimulationUser,
+  SimulationActivityLog
+} from "./schema.js";
+
 
 export const errorSchemas = {
   validation: z.object({
@@ -24,7 +47,9 @@ export const api = {
       path: '/api/auth/register',
       input: InsertUser,
       responses: {
-        201: User.omit({ password: true, salt: true, mfaSecret: true }),
+        201: User.omit({ password: true, salt: true, mfaSecret: true }).extend({
+          token: z.string().optional()
+        }),
         400: errorSchemas.validation,
       },
     },
@@ -33,7 +58,28 @@ export const api = {
       path: '/api/auth/login',
       input: LoginRequest,
       responses: {
-        200: User.omit({ password: true, salt: true, mfaSecret: true }),
+        200: User.omit({ password: true, salt: true, mfaSecret: true }).extend({
+          token: z.string().optional()
+        }),
+        401: errorSchemas.unauthorized,
+        403: z.object({ message: z.string(), mfaRequired: z.boolean() }),
+      },
+    },
+    mfaSetup: {
+      method: 'POST' as const,
+      path: '/api/auth/mfa/setup',
+      responses: {
+        200: z.object({ qrCode: z.string(), secret: z.string() }),
+        401: errorSchemas.unauthorized,
+      },
+    },
+    mfaVerify: {
+      method: 'POST' as const,
+      path: '/api/auth/mfa/verify',
+      input: z.object({ code: z.string() }),
+      responses: {
+        200: z.object({ success: z.boolean() }),
+        400: errorSchemas.validation,
         401: errorSchemas.unauthorized,
       },
     },
@@ -127,15 +173,123 @@ export const api = {
         path: '/api/attack/brute-force',
         input: BruteForceRequest,
         responses: {
-          200: z.object({ 
-            success: z.boolean(), 
+          200: z.object({
+            success: z.boolean(),
             crackedPassword: z.string().optional(),
             attempts: z.number(),
-            timeTaken: z.number() 
+            timeTaken: z.number(),
+            hashAlgorithm: z.string().optional(),
+            complexity: z.number().optional(),
+            attackSpeed: z.number().optional()
           }),
         },
       },
     },
+    simulation: {
+      // Access Control
+      getACM: {
+        method: 'GET' as const,
+        path: '/api/simulation/acm',
+        responses: {
+          200: z.array(AccessControlPolicy),
+        },
+      },
+      verifyAccess: {
+        method: 'POST' as const,
+        path: '/api/simulation/acm/verify',
+        input: z.object({
+          role: z.string(),
+          resource: z.string(),
+          permission: z.string(),
+        }),
+        responses: {
+          200: z.object({ allowed: z.boolean() }),
+        },
+      },
+      logAccess: {
+        method: 'POST' as const,
+        path: '/api/simulation/acm/log',
+        input: AccessControlLog.omit({ id: true }),
+        responses: {
+          201: AccessControlLog,
+        },
+      },
+      getAccessLogs: {
+        method: 'GET' as const,
+        path: '/api/simulation/acm/logs',
+        responses: {
+          200: z.array(AccessControlLog),
+        },
+      },
+      createPolicy: {
+        method: 'POST' as const,
+        path: '/api/simulation/acm',
+        input: AccessControlPolicy.omit({ id: true }),
+        responses: {
+          201: AccessControlPolicy,
+        },
+      },
+      deletePolicy: {
+        method: 'DELETE' as const,
+        path: '/api/simulation/acm/:id',
+        responses: {
+          200: z.object({ success: z.boolean() }),
+        },
+      },
+
+      // Auth Simulation
+      createAuthUser: {
+        method: 'POST' as const,
+        path: '/api/simulation/auth/register',
+        input: InsertAuthSimulationUser,
+        responses: {
+          201: AuthSimulationUser,
+        },
+      },
+      getAuthUser: {
+        method: 'GET' as const,
+        path: '/api/simulation/auth/user/:email',
+        responses: {
+          200: AuthSimulationUser,
+          404: errorSchemas.notFound,
+        },
+      },
+
+      // Hashing Simulation
+      createHashingUser: {
+        method: 'POST' as const,
+        path: '/api/simulation/hashing/register',
+        input: InsertHashingSimulationUser,
+        responses: {
+          201: HashingSimulationUser,
+        },
+      },
+      getHashingUsers: {
+        method: 'GET' as const,
+        path: '/api/simulation/hashing/users',
+        responses: {
+          200: z.array(HashingSimulationUser),
+        },
+      },
+
+      // Generic Activity Log
+      logActivity: {
+        method: 'POST' as const,
+        path: '/api/simulation/activity/log',
+        input: SimulationActivityLog.omit({ id: true }),
+        responses: {
+          201: SimulationActivityLog,
+        },
+      },
+      getActivity: {
+        method: 'GET' as const,
+        path: '/api/simulation/activity/:module',
+        responses: {
+          200: z.array(SimulationActivityLog),
+        },
+      },
+    },
+
   },
   chat: {
     list: {
