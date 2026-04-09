@@ -83,7 +83,7 @@ app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") {
     const __dirname = path.resolve();
     app.use(express.static(path.join(__dirname, "dist")));
-    app.get("(.*)", (_req, res) => {
+    app.get(/^(?!\/api).+/, (_req, res) => {
       res.sendFile(path.join(__dirname, "dist", "index.html"));
     });
   } else {
