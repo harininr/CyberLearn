@@ -1,10 +1,10 @@
 import pkg from 'pg';
 const { Pool } = pkg;
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/cyberease';
 
-if (!connectionString) {
-  throw new Error('DATABASE_URL environment variable is not set');
+if (!process.env.DATABASE_URL) {
+  console.warn('[database] WARNING: DATABASE_URL environment variable is not set. Falling back to local default.');
 }
 
 export const db = new Pool({
