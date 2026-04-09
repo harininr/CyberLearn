@@ -107,7 +107,7 @@ app.use((req, res, next) => {
     server.close(async () => {
       log('HTTP server closed');
       const { db } = await import("./db.js");
-      db.close();
+      await db.end();
       log('Database connection closed');
       process.exit(0);
     });

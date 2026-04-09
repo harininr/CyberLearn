@@ -1,141 +1,150 @@
-import Database from 'better-sqlite3';
-import path from 'path';
+import pkg from 'pg';
+const { Pool } = pkg;
 
-const DB_FILE = process.env.NODE_ENV === 'production'
-  ? '/data/cyberease.db'
-  : path.join(process.cwd(), 'cyberease.db');
+const connectionString = process.env.DATABASE_URL;
 
-// Create database connection
-export const db = new Database(DB_FILE);
+if (!connectionString) {
+  throw new Error('DATABASE_URL environment variable is not set');
+}
 
-// Enable WAL mode for better performance
-db.pragma('journal_mode = WAL');
-db.pragma('synchronous = NORMAL');
-db.pragma('foreign_keys = ON');
-db.pragma('busy_timeout = 5000');
+export const db = new Pool({
+  connectionString,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+});
 
 // Initialize database schema
-export function initializeDatabase() {
-  // Users table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS users (
-      id TEXT PRIMARY KEY,
-      username TEXT UNIQUE NOT NULL,
-      password TEXT NOT NULL,
-      salt TEXT NOT NULL,
-      role TEXT NOT NULL CHECK(role IN ('Student', 'Instructor', 'Admin')),
-      isMfaEnabled INTEGER DEFAULT 0,
-      mfaSecret TEXT
-    )
-  `);
+export async function initializeDatabase() {
+  const client = await db.connect();
+  try {
+    await client.query('BEGIN');
 
-  // Logs table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS logs (
-      id TEXT PRIMARY KEY,
-      userId TEXT,
-      timestamp TEXT NOT NULL,
-      module TEXT NOT NULL,
-      action TEXT NOT NULL,
-      details TEXT NOT NULL,
-      result TEXT NOT NULL
-    )
-  `);
-
-  // Conversations table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS conversations (
-      id TEXT PRIMARY KEY,
-      title TEXT NOT NULL,
-      createdAt TEXT NOT NULL
-    )
-  `);
-
-  // Messages table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS messages (
-      id TEXT PRIMARY KEY,
-      conversationId TEXT NOT NULL,
-      role TEXT NOT NULL CHECK(role IN ('user', 'assistant')),
-      content TEXT NOT NULL,
-      createdAt TEXT NOT NULL,
-      FOREIGN KEY (conversationId) REFERENCES conversations(id)
-    )
-  `);
-
-  // Create indexes for better query performance
-  db.exec(`CREATE INDEX IF NOT EXISTS idx_users_username ON users(username)`);
-  db.exec(`CREATE INDEX IF NOT EXISTS idx_logs_userId ON logs(userId)`);
-  db.exec(`CREATE INDEX IF NOT EXISTS idx_messages_conversationId ON messages(conversationId)`);
-
-  // Access Control Policies table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS access_control_policies (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      role TEXT NOT NULL,
-      resource TEXT NOT NULL,
-      permission TEXT NOT NULL,
-      allowed INTEGER DEFAULT 1
-    )
+    // Users table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS users (
+        id TEXT PRIMARY KEY,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
+        salt TEXT NOT NULL,
+        role TEXT NOT NULL CHECK(role IN ('Student', 'Instructor', 'Admin')),
+        "isMfaEnabled" INTEGER DEFAULT 0,
+        "mfaSecret" TEXT
+      )
     `);
 
-  // Access Control Logs table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS access_control_logs (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      timestamp TEXT NOT NULL,
-      actor TEXT NOT NULL,
-      action TEXT NOT NULL,
-      resource TEXT NOT NULL,
-      outcome TEXT NOT NULL,
-      details TEXT
-    )
+    // Logs table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS logs (
+        id TEXT PRIMARY KEY,
+        "userId" TEXT,
+        timestamp TEXT NOT NULL,
+        module TEXT NOT NULL,
+        action TEXT NOT NULL,
+        details TEXT NOT NULL,
+        result TEXT NOT NULL
+      )
     `);
 
-  // Auth Simulation Users table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS auth_simulation_users (
-      id TEXT PRIMARY KEY,
-      email TEXT UNIQUE NOT NULL,
-      password TEXT NOT NULL,
-      fullName TEXT NOT NULL,
-      studentId TEXT NOT NULL,
-      department TEXT NOT NULL,
-      otpSecret TEXT NOT NULL,
-      mfaEnabled INTEGER DEFAULT 1,
-      registered INTEGER DEFAULT 1,
-      registrationDate TEXT NOT NULL
-    )
-  `);
+    // Conversations table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS conversations (
+        id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        "createdAt" TEXT NOT NULL
+      )
+    `);
 
-  // Hashing Simulation Users table
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS hashing_simulation_users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      username TEXT NOT NULL,
-      passwordHash TEXT NOT NULL,
-      salt TEXT NOT NULL
-    )
-  `);
+    // Messages table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS messages (
+        id TEXT PRIMARY KEY,
+        "conversationId" TEXT NOT NULL,
+        role TEXT NOT NULL CHECK(role IN ('user', 'assistant')),
+        content TEXT NOT NULL,
+        "createdAt" TEXT NOT NULL,
+        FOREIGN KEY ("conversationId") REFERENCES conversations(id)
+      )
+    `);
 
-  // Simulation Activity Logs (for Crypto, DS, etc.)
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS simulation_activity_logs (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      module TEXT NOT NULL,
-      timestamp TEXT NOT NULL,
-      action TEXT NOT NULL,
-      details TEXT NOT NULL
-    )
-  `);
+    // Access Control Policies table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS access_control_policies (
+        id SERIAL PRIMARY KEY,
+        role TEXT NOT NULL,
+        resource TEXT NOT NULL,
+        permission TEXT NOT NULL,
+        allowed INTEGER DEFAULT 1
+      )
+    `);
 
-  // Index for policies
-  db.exec(`CREATE INDEX IF NOT EXISTS idx_policies_role ON access_control_policies(role)`);
-  db.exec(`CREATE INDEX IF NOT EXISTS idx_sim_logs_module ON simulation_activity_logs(module)`);
+    // Access Control Logs table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS access_control_logs (
+        id SERIAL PRIMARY KEY,
+        timestamp TEXT NOT NULL,
+        actor TEXT NOT NULL,
+        action TEXT NOT NULL,
+        resource TEXT NOT NULL,
+        outcome TEXT NOT NULL,
+        details TEXT
+      )
+    `);
 
+    // Auth Simulation Users table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS auth_simulation_users (
+        id TEXT PRIMARY KEY,
+        email TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
+        "fullName" TEXT NOT NULL,
+        "studentId" TEXT NOT NULL,
+        department TEXT NOT NULL,
+        "otpSecret" TEXT NOT NULL,
+        "mfaEnabled" INTEGER DEFAULT 1,
+        registered INTEGER DEFAULT 1,
+        "registrationDate" TEXT NOT NULL
+      )
+    `);
 
-  console.log('[database] SQLite database initialized');
+    // Hashing Simulation Users table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS hashing_simulation_users (
+        id SERIAL PRIMARY KEY,
+        username TEXT NOT NULL,
+        "passwordHash" TEXT NOT NULL,
+        salt TEXT NOT NULL
+      )
+    `);
+
+    // Simulation Activity Logs
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS simulation_activity_logs (
+        id SERIAL PRIMARY KEY,
+        module TEXT NOT NULL,
+        timestamp TEXT NOT NULL,
+        action TEXT NOT NULL,
+        details TEXT NOT NULL
+      )
+    `);
+
+    // Create indexes
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_users_username ON users(username)`);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_logs_userId ON logs("userId")`);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_messages_conversationId ON messages("conversationId")`);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_policies_role ON access_control_policies(role)`);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_sim_logs_module ON simulation_activity_logs(module)`);
+
+    await client.query('COMMIT');
+    console.log('[database] PostgreSQL database initialized');
+  } catch (err) {
+    await client.query('ROLLBACK');
+    console.error('[database] Error initializing database:', err);
+    throw err;
+  } finally {
+    client.release();
+  }
 }
 
 // Initialize on import
-initializeDatabase();
+initializeDatabase().catch(err => {
+  console.error('Initial database setup failed:', err);
+});

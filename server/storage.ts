@@ -50,83 +50,14 @@ export interface IStorage {
 }
 
 
-export class SqliteStorage implements IStorage {
-  // Prepared statements for better performance
-  private stmts = {
-    getUser: db.prepare('SELECT * FROM users WHERE id = ?'),
-    getUserByUsername: db.prepare('SELECT * FROM users WHERE username = ?'),
-    createUser: db.prepare(`
-      INSERT INTO users (id, username, password, salt, role, isMfaEnabled, mfaSecret)
-      VALUES (@id, @username, @password, @salt, @role, @isMfaEnabled, @mfaSecret)
-    `),
-    createLog: db.prepare(`
-      INSERT INTO logs (id, userId, timestamp, module, action, details, result)
-      VALUES (@id, @userId, @timestamp, @module, @action, @details, @result)
-    `),
-    getLogs: db.prepare('SELECT * FROM logs ORDER BY timestamp DESC'),
-    getLogsByUser: db.prepare('SELECT * FROM logs WHERE userId = ? ORDER BY timestamp DESC'),
-    getAllConversations: db.prepare('SELECT * FROM conversations ORDER BY createdAt DESC'),
-    getConversation: db.prepare('SELECT * FROM conversations WHERE id = ?'),
-    createConversation: db.prepare(`
-      INSERT INTO conversations (id, title, createdAt)
-      VALUES (@id, @title, @createdAt)
-    `),
-    getMessages: db.prepare('SELECT * FROM messages WHERE conversationId = ? ORDER BY createdAt ASC'),
-    createMessage: db.prepare(`
-      INSERT INTO messages (id, conversationId, role, content, createdAt)
-      VALUES (@id, @conversationId, @role, @content, @createdAt)
-    `),
-
-    // ACM Simulation (Restructured)
-    getAccessControlPolicies: db.prepare('SELECT * FROM access_control_policies'),
-    createAccessControlPolicy: db.prepare(`
-      INSERT INTO access_control_policies (role, resource, permission, allowed)
-      VALUES (@role, @resource, @permission, @allowed)
-    `),
-    logAccessControlEvent: db.prepare(`
-      INSERT INTO access_control_logs (timestamp, actor, action, resource, outcome, details)
-      VALUES (@timestamp, @actor, @action, @resource, @outcome, @details)
-    `),
-    getAccessControlLogs: db.prepare('SELECT * FROM access_control_logs ORDER BY timestamp DESC LIMIT 50'),
-    checkPermission: db.prepare(`
-      SELECT allowed FROM access_control_policies 
-      WHERE role = ? AND resource = ? AND permission = ?
-    `),
-    deleteAccessControlPolicy: db.prepare('DELETE FROM access_control_policies WHERE id = ?'),
-
-    // Auth Simulation
-    createAuthSimulationUser: db.prepare(`
-      INSERT INTO auth_simulation_users (id, email, password, fullName, studentId, department, otpSecret, mfaEnabled, registered, registrationDate)
-      VALUES (@id, @email, @password, @fullName, @studentId, @department, @otpSecret, @mfaEnabled, @registered, @registrationDate)
-    `),
-    getAuthSimulationUserByEmail: db.prepare('SELECT * FROM auth_simulation_users WHERE email = ?'),
-
-    // Hashing Simulation
-    createHashingSimulationUser: db.prepare(`
-      INSERT INTO hashing_simulation_users (username, passwordHash, salt)
-      VALUES (@username, @passwordHash, @salt)
-    `),
-    getHashingSimulationUsers: db.prepare('SELECT * FROM hashing_simulation_users'),
-
-    // Simulation Activity
-    logSimulationActivity: db.prepare(`
-      INSERT INTO simulation_activity_logs (module, timestamp, action, details)
-      VALUES (@module, @timestamp, @action, @details)
-    `),
-    getSimulationActivity: db.prepare('SELECT * FROM simulation_activity_logs WHERE module = ? ORDER BY timestamp DESC'),
-
-    updateMfaSecret: db.prepare('UPDATE users SET mfaSecret = ? WHERE id = ?'),
-    enableMfa: db.prepare('UPDATE users SET isMfaEnabled = 1 WHERE id = ?'),
-  };
-
-
+export class PostgresStorage implements IStorage {
   constructor() {
     this.seedAccessPolicies();
   }
 
-  private seedAccessPolicies() {
-    const policies = this.stmts.getAccessControlPolicies.all();
-    if (policies.length === 0) {
+  private async seedAccessPolicies() {
+    const res = await db.query('SELECT * FROM access_control_policies');
+    if (res.rows.length === 0) {
       const initialPolicies = [
         // Student
         { role: "student", resource: "course_materials", permission: "read", allowed: 1 },
@@ -169,30 +100,27 @@ export class SqliteStorage implements IStorage {
         { role: "admin", resource: "system_settings", permission: "write", allowed: 1 },
         { role: "admin", resource: "system_settings", permission: "manage", allowed: 1 },
 
-        // Guest Role (New for better sample)
+        // Guest Role
         { role: "guest", resource: "course_materials", permission: "read", allowed: 1 },
         { role: "guest", resource: "assignments", permission: "read", allowed: 0 },
         { role: "guest", resource: "grades", permission: "read", allowed: 0 },
 
-        // Security Resource (New for better sample)
+        // Security Resource
         { role: "admin", resource: "security_logs", permission: "read", allowed: 1 },
         { role: "admin", resource: "security_logs", permission: "delete", allowed: 1 },
         { role: "faculty", resource: "security_logs", permission: "read", allowed: 1 },
         { role: "student", resource: "security_logs", permission: "read", allowed: 0 },
       ];
 
-      initialPolicies.forEach(p => {
-        this.stmts.createAccessControlPolicy.run({
-          role: p.role,
-          resource: p.resource,
-          permission: p.permission,
-          allowed: p.allowed
-        });
-      });
+      for (const p of initialPolicies) {
+        await db.query(
+          'INSERT INTO access_control_policies (role, resource, permission, allowed) VALUES ($1, $2, $3, $4)',
+          [p.role, p.resource, p.permission, p.allowed]
+        );
+      }
       console.log("[database] seeded enhanced access policies");
     }
   }
-
 
   private mapUserFromDb(row: any): User | undefined {
     if (!row) return undefined;
@@ -203,153 +131,135 @@ export class SqliteStorage implements IStorage {
   }
 
   async getUser(id: string): Promise<User | undefined> {
-    const row = this.stmts.getUser.get(id);
-    return this.mapUserFromDb(row);
+    const res = await db.query('SELECT * FROM users WHERE id = $1', [id]);
+    return this.mapUserFromDb(res.rows[0]);
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    const row = this.stmts.getUserByUsername.get(username);
-    return this.mapUserFromDb(row);
+    const res = await db.query('SELECT * FROM users WHERE username = $1', [username]);
+    return this.mapUserFromDb(res.rows[0]);
   }
 
   async createUser(user: User): Promise<User> {
-    this.stmts.createUser.run({
-      id: user.id,
-      username: user.username,
-      password: user.password,
-      salt: user.salt,
-      role: user.role,
-      isMfaEnabled: user.isMfaEnabled ? 1 : 0,
-      mfaSecret: user.mfaSecret || null,
-    });
+    await db.query(`
+      INSERT INTO users (id, username, password, salt, role, "isMfaEnabled", "mfaSecret")
+      VALUES ($1, $2, $3, $4, $5, $6, $7)
+    `, [user.id, user.username, user.password, user.salt, user.role, user.isMfaEnabled ? 1 : 0, user.mfaSecret || null]);
     return user;
   }
 
   async updateMfaSecret(id: string, secret: string): Promise<void> {
-    this.stmts.updateMfaSecret.run(secret, id);
+    await db.query('UPDATE users SET "mfaSecret" = $1 WHERE id = $2', [secret, id]);
   }
 
   async enableMfa(id: string): Promise<void> {
-    this.stmts.enableMfa.run(id);
+    await db.query('UPDATE users SET "isMfaEnabled" = 1 WHERE id = $2', [id]);
   }
 
   async createLog(log: Log): Promise<Log> {
-    this.stmts.createLog.run({
-      id: log.id,
-      userId: log.userId || null,
-      timestamp: log.timestamp,
-      module: log.module,
-      action: log.action,
-      details: log.details,
-      result: log.result,
-    });
+    await db.query(`
+      INSERT INTO logs (id, "userId", timestamp, module, action, details, result)
+      VALUES ($1, $2, $3, $4, $5, $6, $7)
+    `, [log.id, log.userId || null, log.timestamp, log.module, log.action, log.details, log.result]);
     return log;
   }
 
   async getLogs(userId?: string): Promise<Log[]> {
     if (userId) {
-      return this.stmts.getLogsByUser.all(userId) as Log[];
+      const res = await db.query('SELECT * FROM logs WHERE "userId" = $1 ORDER BY timestamp DESC', [userId]);
+      return res.rows as Log[];
     }
-    return this.stmts.getLogs.all() as Log[];
+    const res = await db.query('SELECT * FROM logs ORDER BY timestamp DESC');
+    return res.rows as Log[];
   }
 
   async getAllConversations(): Promise<Conversation[]> {
-    return this.stmts.getAllConversations.all() as Conversation[];
+    const res = await db.query('SELECT * FROM conversations ORDER BY "createdAt" DESC');
+    return res.rows as Conversation[];
   }
 
   async getConversation(id: string): Promise<Conversation | undefined> {
-    const row = this.stmts.getConversation.get(id);
-    return row as Conversation | undefined;
+    const res = await db.query('SELECT * FROM conversations WHERE id = $1', [id]);
+    return res.rows[0] as Conversation | undefined;
   }
 
   async createConversation(conversation: Conversation): Promise<Conversation> {
-    this.stmts.createConversation.run({
-      id: conversation.id,
-      title: conversation.title,
-      createdAt: conversation.createdAt,
-    });
+    await db.query(`
+      INSERT INTO conversations (id, title, "createdAt")
+      VALUES ($1, $2, $3)
+    `, [conversation.id, conversation.title, conversation.createdAt]);
     return conversation;
   }
 
   async getMessages(conversationId: string): Promise<Message[]> {
-    return this.stmts.getMessages.all(conversationId) as Message[];
+    const res = await db.query('SELECT * FROM messages WHERE "conversationId" = $1 ORDER BY "createdAt" ASC', [conversationId]);
+    return res.rows as Message[];
   }
 
   async createMessage(message: Message): Promise<Message> {
-    this.stmts.createMessage.run({
-      id: message.id,
-      conversationId: message.conversationId,
-      role: message.role,
-      content: message.content,
-      createdAt: message.createdAt,
-    });
+    await db.query(`
+      INSERT INTO messages (id, "conversationId", role, content, "createdAt")
+      VALUES ($1, $2, $3, $4, $5)
+    `, [message.id, message.conversationId, message.role, message.content, message.createdAt]);
     return message;
   }
 
-  // ACM Simulation
   async getAccessControlPolicies(): Promise<AccessControlPolicy[]> {
-    return this.stmts.getAccessControlPolicies.all().map((p: any) => ({
+    const res = await db.query('SELECT * FROM access_control_policies');
+    return res.rows.map((p: any) => ({
       ...p,
       allowed: Boolean(p.allowed)
     })) as AccessControlPolicy[];
   }
 
   async createAccessControlPolicy(policy: AccessControlPolicy): Promise<AccessControlPolicy> {
-    const res = this.stmts.createAccessControlPolicy.run({
-      role: policy.role,
-      resource: policy.resource,
-      permission: policy.permission,
-      allowed: policy.allowed ? 1 : 0
-    });
-    return { ...policy, id: Number(res.lastInsertRowid) };
+    const res = await db.query(`
+      INSERT INTO access_control_policies (role, resource, permission, allowed)
+      VALUES ($1, $2, $3, $4)
+      RETURNING id
+    `, [policy.role, policy.resource, policy.permission, policy.allowed ? 1 : 0]);
+    return { ...policy, id: res.rows[0].id };
   }
 
   async logAccessControlEvent(log: AccessControlLog): Promise<AccessControlLog> {
-    const res = this.stmts.logAccessControlEvent.run({
-      timestamp: log.timestamp,
-      actor: log.actor,
-      action: log.action,
-      resource: log.resource,
-      outcome: log.outcome,
-      details: log.details || null
-    });
-    return { ...log, id: Number(res.lastInsertRowid) };
+    const res = await db.query(`
+      INSERT INTO access_control_logs (timestamp, actor, action, resource, outcome, details)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING id
+    `, [log.timestamp, log.actor, log.action, log.resource, log.outcome, log.details || null]);
+    return { ...log, id: res.rows[0].id };
   }
 
   async getAccessControlLogs(): Promise<AccessControlLog[]> {
-    return this.stmts.getAccessControlLogs.all() as AccessControlLog[];
+    const res = await db.query('SELECT * FROM access_control_logs ORDER BY timestamp DESC LIMIT 50');
+    return res.rows as AccessControlLog[];
   }
 
   async checkPermission(role: string, resource: string, permission: string): Promise<boolean> {
-    const row = this.stmts.checkPermission.get(role, resource, permission) as { allowed: number } | undefined;
-    return row ? Boolean(row.allowed) : false;
+    const res = await db.query(`
+      SELECT allowed FROM access_control_policies 
+      WHERE role = $1 AND resource = $2 AND permission = $3
+    `, [role, resource, permission]);
+    return res.rows[0] ? Boolean(res.rows[0].allowed) : false;
   }
 
   async deleteAccessControlPolicy(id: number): Promise<boolean> {
-    const res = this.stmts.deleteAccessControlPolicy.run(id);
-    return res.changes > 0;
+    const res = await db.query('DELETE FROM access_control_policies WHERE id = $1', [id]);
+    return (res.rowCount ?? 0) > 0;
   }
 
-  // Auth Simulation
   async createAuthSimulationUser(user: AuthSimulationUser): Promise<AuthSimulationUser> {
-    this.stmts.createAuthSimulationUser.run({
-      id: user.id,
-      email: user.email,
-      password: user.password,
-      fullName: user.fullName,
-      studentId: user.studentId,
-      department: user.department,
-      otpSecret: user.otpSecret,
-      mfaEnabled: user.mfaEnabled ? 1 : 0,
-      registered: user.registered ? 1 : 0,
-      registrationDate: user.registrationDate
-    });
+    await db.query(`
+      INSERT INTO auth_simulation_users (id, email, password, "fullName", "studentId", department, "otpSecret", "mfaEnabled", registered, "registrationDate")
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+    `, [user.id, user.email, user.password, user.fullName, user.studentId, user.department, user.otpSecret, user.mfaEnabled ? 1 : 0, user.registered ? 1 : 0, user.registrationDate]);
     return user;
   }
 
 
   async getAuthSimulationUserByEmail(email: string): Promise<AuthSimulationUser | undefined> {
-    const row = this.stmts.getAuthSimulationUserByEmail.get(email) as any;
+    const res = await db.query('SELECT * FROM auth_simulation_users WHERE email = $1', [email]);
+    const row = res.rows[0];
     if (!row) return undefined;
     return {
       id: row.id,
@@ -365,26 +275,34 @@ export class SqliteStorage implements IStorage {
     };
   }
 
-  // Hashing Simulation
   async createHashingSimulationUser(user: InsertHashingSimulationUser): Promise<HashingSimulationUser> {
-    const res = this.stmts.createHashingSimulationUser.run(user);
-    return { ...user, id: Number(res.lastInsertRowid) } as HashingSimulationUser;
+    const res = await db.query(`
+      INSERT INTO hashing_simulation_users (username, "passwordHash", salt)
+      VALUES ($1, $2, $3)
+      RETURNING id
+    `, [user.username, user.passwordHash, user.salt]);
+    return { ...user, id: res.rows[0].id } as HashingSimulationUser;
   }
 
   async getHashingSimulationUsers(): Promise<HashingSimulationUser[]> {
-    return this.stmts.getHashingSimulationUsers.all() as HashingSimulationUser[];
+    const res = await db.query('SELECT * FROM hashing_simulation_users');
+    return res.rows as HashingSimulationUser[];
   }
 
-  // Simulation Activity
   async logSimulationActivity(activity: Omit<SimulationActivityLog, "id">): Promise<SimulationActivityLog> {
-    const res = this.stmts.logSimulationActivity.run(activity);
-    return { ...activity, id: Number(res.lastInsertRowid) } as SimulationActivityLog;
+    const res = await db.query(`
+      INSERT INTO simulation_activity_logs (module, timestamp, action, details)
+      VALUES ($1, $2, $3, $4)
+      RETURNING id
+    `, [activity.module, activity.timestamp, activity.action, activity.details]);
+    return { ...activity, id: res.rows[0].id } as SimulationActivityLog;
   }
 
   async getSimulationActivity(module: string): Promise<SimulationActivityLog[]> {
-    return this.stmts.getSimulationActivity.all(module) as SimulationActivityLog[];
+    const res = await db.query('SELECT * FROM simulation_activity_logs WHERE module = $1 ORDER BY timestamp DESC', [module]);
+    return res.rows as SimulationActivityLog[];
   }
 
-} // End of SqliteStorage
+}
 
-export const storage = new SqliteStorage();
+export const storage = new PostgresStorage();
