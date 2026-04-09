@@ -349,13 +349,20 @@ export class SqliteStorage implements IStorage {
 
 
   async getAuthSimulationUserByEmail(email: string): Promise<AuthSimulationUser | undefined> {
-    const row = this.stmts.getAuthSimulationUserByEmail.get(email);
+    const row = this.stmts.getAuthSimulationUserByEmail.get(email) as any;
     if (!row) return undefined;
     return {
-      ...row,
+      id: row.id,
+      email: row.email,
+      password: row.password,
+      fullName: row.fullName,
+      studentId: row.studentId,
+      department: row.department,
+      otpSecret: row.otpSecret,
       mfaEnabled: Boolean(row.mfaEnabled),
-      registered: Boolean(row.registered)
-    } as AuthSimulationUser;
+      registered: Boolean(row.registered),
+      registrationDate: row.registrationDate
+    };
   }
 
   // Hashing Simulation

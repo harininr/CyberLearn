@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build && tsc -p tsconfig.server.json",
+    "build": "vite build && tsc -p tsconfig.server.json && node -e \"require('fs').writeFileSync('dist/index.js', 'import \\\"./server/index.js\\\";\\n')\"",
     "dev": "tsx watch server/index.ts",
     "start": "node dist/index.js"
   },
