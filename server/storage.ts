@@ -52,7 +52,9 @@ export interface IStorage {
 
 export class PostgresStorage implements IStorage {
   constructor() {
-    this.seedAccessPolicies();
+    this.seedAccessPolicies().catch(err => {
+      console.error('[database] Failed to seed access policies:', err.message);
+    });
   }
 
   private async seedAccessPolicies() {
