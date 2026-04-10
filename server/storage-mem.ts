@@ -58,16 +58,16 @@ export class MemStorage implements IStorage {
   }
 
   private seedAccessPolicies() {
-    const initialPolicies = [
-      { id: 1, role: "student", resource: "course_materials", permission: "read", allowed: 1 },
-      { id: 2, role: "student", resource: "course_materials", permission: "download", allowed: 1 },
-      { id: 3, role: "student", resource: "assignments", permission: "read", allowed: 1 },
-      { id: 4, role: "student", resource: "assignments", permission: "submit", allowed: 1 },
-      { id: 5, role: "student", resource: "grades", permission: "read", allowed: 1 },
-      { id: 6, role: "faculty", resource: "course_materials", permission: "read", allowed: 1 },
-      { id: 7, role: "faculty", resource: "course_materials", permission: "write", allowed: 1 },
-      { id: 8, role: "faculty", resource: "assignments", permission: "grade", allowed: 1 },
-      { id: 9, role: "admin", resource: "system_settings", permission: "manage", allowed: 1 },
+    const initialPolicies: AccessControlPolicy[] = [
+      { id: 1, role: "student", resource: "course_materials", permission: "read", allowed: true },
+      { id: 2, role: "student", resource: "course_materials", permission: "download", allowed: true },
+      { id: 3, role: "student", resource: "assignments", permission: "read", allowed: true },
+      { id: 4, role: "student", resource: "assignments", permission: "submit", allowed: true },
+      { id: 5, role: "student", resource: "grades", permission: "read", allowed: true },
+      { id: 6, role: "faculty", resource: "course_materials", permission: "read", allowed: true },
+      { id: 7, role: "faculty", resource: "course_materials", permission: "write", allowed: true },
+      { id: 8, role: "faculty", resource: "assignments", permission: "grade", allowed: true },
+      { id: 9, role: "admin", resource: "system_settings", permission: "manage", allowed: true },
     ];
     this.policies = initialPolicies;
   }
