@@ -9,14 +9,23 @@ if (!process.env.DATABASE_URL) {
 
 export const db = new Pool({
   connectionString,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  ssl: { rejectUnauthorized: false },
   max: 10,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 5000,
+});
+
+db.on('error', (err) => {
+  console.error('[database] Unexpected error on idle client:', err.message);
 });
 
 // Initialize database schema
 export async function initializeDatabase() {
+  if (!process.env.DATABASE_URL) {
+    console.warn('[database] Skipping initialization: DATABASE_URL not set');
+    return;
+  }
+  
   const client = await db.connect();
   try {
     await client.query('BEGIN');
@@ -146,8 +155,3 @@ export async function initializeDatabase() {
     client.release();
   }
 }
-
-// Initialize on import
-initializeDatabase().catch(err => {
-  console.error('Initial database setup failed:', err);
-});

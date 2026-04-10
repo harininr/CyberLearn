@@ -7,47 +7,7 @@ import {
 
 import { db } from "./db.js";
 
-export interface IStorage {
-  // User
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: User): Promise<User>;
-
-  // Logs
-  createLog(log: Log): Promise<Log>;
-  getLogs(userId?: string): Promise<Log[]>;
-
-  // Chat
-  getAllConversations(): Promise<Conversation[]>;
-  getConversation(id: string): Promise<Conversation | undefined>;
-  createConversation(conversation: Conversation): Promise<Conversation>;
-  getMessages(conversationId: string): Promise<Message[]>;
-  createMessage(message: Message): Promise<Message>;
-
-  // Access Control Simulation
-  getAccessControlPolicies(): Promise<AccessControlPolicy[]>;
-  createAccessControlPolicy(policy: AccessControlPolicy): Promise<AccessControlPolicy>;
-  logAccessControlEvent(log: AccessControlLog): Promise<AccessControlLog>;
-  getAccessControlLogs(): Promise<AccessControlLog[]>;
-  checkPermission(role: string, resource: string, permission: string): Promise<boolean>;
-  deleteAccessControlPolicy(id: number): Promise<boolean>;
-
-  // Auth Simulation
-  createAuthSimulationUser(user: AuthSimulationUser): Promise<AuthSimulationUser>;
-  getAuthSimulationUserByEmail(email: string): Promise<AuthSimulationUser | undefined>;
-
-  // Hashing Simulation
-  createHashingSimulationUser(user: InsertHashingSimulationUser): Promise<HashingSimulationUser>;
-  getHashingSimulationUsers(): Promise<HashingSimulationUser[]>;
-
-  // Generic Simulation Activity
-  logSimulationActivity(activity: Omit<SimulationActivityLog, "id">): Promise<SimulationActivityLog>;
-  getSimulationActivity(module: string): Promise<SimulationActivityLog[]>;
-
-  // MFA
-  updateMfaSecret(id: string, secret: string): Promise<void>;
-  enableMfa(id: string): Promise<void>;
-}
+import { IStorage } from "./storage-types.js";
 
 
 export class PostgresStorage implements IStorage {
@@ -155,7 +115,7 @@ export class PostgresStorage implements IStorage {
   }
 
   async enableMfa(id: string): Promise<void> {
-    await db.query('UPDATE users SET "isMfaEnabled" = 1 WHERE id = $2', [id]);
+    await db.query('UPDATE users SET "isMfaEnabled" = 1 WHERE id = $1', [id]);
   }
 
   async createLog(log: Log): Promise<Log> {
@@ -307,4 +267,38 @@ export class PostgresStorage implements IStorage {
 
 }
 
-export const storage = new PostgresStorage();
+import { MemStorage } from "./storage-mem.js";
+
+// Use MemStorage by default, switch to PostgresStorage asynchronously if DB is available
+let _storage: IStorage = new MemStorage();
+
+async function initStorage(): Promise<void> {
+  if (!process.env.DATABASE_URL) {
+    console.log('[storage] No DATABASE_URL set, using in-memory storage');
+    return;
+  }
+  
+  try {
+    // Test the connection with a short timeout
+    const client = await db.connect();
+    await client.query('SELECT 1');
+    client.release();
+    
+    _storage = new PostgresStorage();
+    console.log('[storage] Connected to PostgreSQL, using database storage');
+  } catch (err: any) {
+    console.warn('[storage] PostgreSQL connection failed:', err.message);
+    console.warn('[storage] Falling back to in-memory storage');
+    // End the pool to stop background reconnection attempts
+    try { await db.end(); } catch (_) {}
+  }
+}
+
+// Export a proxy that delegates to whichever storage is active
+export const storage: IStorage = new Proxy({} as IStorage, {
+  get(_target, prop: string) {
+    return (_storage as any)[prop];
+  }
+});
+
+export { initStorage };

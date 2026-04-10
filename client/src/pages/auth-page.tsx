@@ -93,7 +93,7 @@ export default function AuthPage() {
   const [setupData, setSetupData] = useState<{ qrCode: string; secret: string } | null>(null);
 
   if (user) {
-    setLocation("/");
+    setLocation("/dashboard");
     return null;
   }
 

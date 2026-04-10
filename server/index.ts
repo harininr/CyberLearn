@@ -62,7 +62,27 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+log("Starting initialization...");
+
+  // Initialize storage
+  log("Initializing storage...");
+  const { initStorage } = await import("./storage.js");
+  await initStorage();
+  log("Storage initialized.");
+
+  // Initialize database schema
+  log("Initializing database schema...");
+  try {
+    const { initializeDatabase } = await import("./db.js");
+    await initializeDatabase();
+    log("Database schema initialized.");
+  } catch (err) {
+    log("Database schema initialization skipped or failed.");
+  }
+
+  log("Registering routes...");
   await registerRoutes(httpServer, app);
+  log("Routes registered.");
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -87,8 +107,10 @@ app.use((req, res, next) => {
       res.sendFile(path.join(__dirname, "dist", "index.html"));
     });
   } else {
+    log("Setting up Vite...");
     const { setupVite } = await import("./vite.js");
     await setupVite(httpServer, app);
+    log("Vite setup complete.");
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT

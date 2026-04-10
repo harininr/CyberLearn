@@ -87,10 +87,11 @@ export async function registerRoutes(
       const { password, salt: s, mfaSecret, ...safeUser } = user;
       res.status(201).json({ ...safeUser, token });
     } catch (err: any) {
+      console.error('[register] Registration error:', err);
       if (err instanceof z.ZodError) {
         res.status(400).json({ message: err.issues[0].message });
       } else {
-        res.status(500).json({ message: "Internal server error" });
+        res.status(500).json({ message: err.message || "Internal server error" });
       }
     }
   }
