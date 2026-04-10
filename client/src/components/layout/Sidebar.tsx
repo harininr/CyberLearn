@@ -9,7 +9,8 @@ import {
   UserCircle,
   FileSignature,
   Users,
-  Code
+  Code,
+  Github
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/use-auth";
@@ -73,6 +74,20 @@ export function Sidebar() {
             <p className="text-xs text-muted-foreground truncate">{user?.role}</p>
           </div>
         </div>
+        <a 
+          href="https://github.com/harininr/CyberLearn" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block mb-2"
+        >
+          <Button
+            variant="ghost"
+            className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-muted/50"
+          >
+            <Github className="w-4 h-4 mr-2" />
+            GitHub Repository
+          </Button>
+        </a>
         <Button
           variant="outline"
           className="w-full justify-start text-muted-foreground hover:text-destructive hover:bg-destructive/10 hover:border-destructive/20"

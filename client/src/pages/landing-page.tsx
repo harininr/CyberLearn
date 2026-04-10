@@ -334,7 +334,7 @@ function NavBar({ onScrollTo }: { onScrollTo: (id: string) => void }) {
         {/* Right actions */}
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/harini"
+            href="https://github.com/harininr/CyberLearn"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex items-center text-gray-400 hover:text-white transition-colors"
@@ -1620,7 +1620,7 @@ function FinalCTA() {
           </Link>
 
           <a
-            href="https://github.com/harini"
+            href="https://github.com/harininr/CyberLearn"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View the source code on GitHub"
@@ -1730,7 +1730,7 @@ function Footer() {
             <span className="text-rose-400">♥</span>
             <span className="text-gray-500">by</span>
             <a
-              href="https://github.com/harini"
+              href="https://github.com/harininr/CyberLearn"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
@@ -1745,7 +1745,7 @@ function Footer() {
           {/* Social icons */}
           <div className="flex gap-2.5">
             {[
-              { Icon: Github, href: "https://github.com/harini", label: "GitHub" },
+              { Icon: Github, href: "https://github.com/harininr/CyberLearn", label: "GitHub" },
               { Icon: Twitter, href: "#", label: "Twitter" },
               { Icon: Linkedin, href: "#", label: "LinkedIn" },
               { Icon: Mail, href: "mailto:harini@cyberlearn.app", label: "Email" },

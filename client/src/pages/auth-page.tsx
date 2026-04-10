@@ -27,7 +27,8 @@ import {
   Binary,
   Zap,
   CheckCircle2,
-  QrCode
+  QrCode,
+  ArrowLeft
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -119,7 +120,17 @@ export default function AuthPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 flex flex-col items-center justify-center p-4">
+      {/* Back Button */}
+      <div className="absolute top-8 left-8 z-20">
+        <Link href="/">
+          <Button variant="ghost" className="text-gray-400 hover:text-white hover:bg-white/10 flex items-center gap-2">
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Button>
+        </Link>
+      </div>
+
       {/* MFA Setup Dialog */}
       <Dialog open={!!setupData} onOpenChange={() => setSetupData(null)}>
         <DialogContent className="bg-gray-900 border-gray-700 text-white sm:max-w-md">
